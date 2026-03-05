@@ -188,7 +188,7 @@ export const OurExclusivesSlider = () => {
       {/* Button  */}
       <div className={styles.ourExclusivesSliderButtonContainer}>
         <img
-          src="/images/lp_v15/desktop/join_button.png"
+          src="/images/lp_v15/desktop/game-on-button.png"
           alt="JOIN NOW"
           className={styles.slider_button}
           onClick={() => router.replace('/sign-up')}
