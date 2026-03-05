@@ -1,0 +1,124 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+.topContainerV11 {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  &::before {
+    @media (min-width: $breakpoint_768) {
+      content: '';
+      position: absolute;
+      bottom: -1%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.22%, rgba(252, 159, 32, 0.90) 84.42%);
+      z-index: 2;
+    }
+  }
+}
+
+.topContainerV11Inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  max-width: 460px;
+  padding: 20px 20px 50px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 20px 20px 56px;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    max-width: $maxWidthContainer;
+    gap: 18px;
+    padding: 40px 20px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.topContainerV11ContentSide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+
+  @media (min-width: $breakpoint_768) {
+    width: 50%;
+    margin-bottom: 6%;
+  }
+}
+
+.topContainerV11ButtonContainer {
+  position: relative;
+  z-index: 5;
+
+  @media (min-width: $breakpoint_768) {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.topContainerV11TitleImage {
+  width: 100%;
+  max-width: 460px;
+  margin-top: -52px;
+  margin-bottom: 30px;
+
+  @media (min-width: $breakpoint_768) {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.topContainerV11ImageSide {
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $breakpoint_768) {
+    width: 50%;
+    margin-top: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+    background: rgba(166, 0, 255, 0.70);
+    filter: blur(34.27809524536133px);
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+
+    @media (min-width: $breakpoint_768) {
+      display: none;
+    }
+  }
+}
+
+.topContainerV11CharactersImage {
+  display: block;
+  position: relative;
+  aspect-ratio: 367 / 357;
+  z-index: 2;
+
+  @media (min-width: $breakpoint_768) {
+    aspect-ratio: 580 / 564;
+  }
+}

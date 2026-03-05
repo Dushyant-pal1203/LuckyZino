@@ -1,0 +1,19 @@
+diff --git a/node_modules/next-auth/react.js b/node_modules/next-auth/react.js
+index fc8f830..6243010 100644
+--- a/node_modules/next-auth/react.js
++++ b/node_modules/next-auth/react.js
+@@ -170,12 +170,14 @@ export async function signIn(provider, options, authorizationParams) {
+     }
+     const error = new URL(data.url).searchParams.get("error");
+     const code = new URL(data.url).searchParams.get("code");
++    const reason = new URL(data.url).searchParams.get("reason");
+     if (res.ok) {
+         await __NEXTAUTH._getSession({ event: "storage" });
+     }
+     return {
+         error,
+         code,
++        reason,
+         status: res.status,
+         ok: res.ok,
+         url: error ? null : data.url,

@@ -1,0 +1,389 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+@keyframes card-cta-text {
+
+    0%,
+    50% {
+        top: -50%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.exclusiveSectionComponent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/images/lp_v15/desktop/offers_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* or any other position like 'top', 'bottom', etc. */
+}
+
+.exclusiveSectionTitle {
+    display: none;
+    max-width: 650px;
+    justify-content: center;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+    @media (min-width: $breakpoint_768) {
+        display: flex;
+    }
+}
+
+.exclusiveSectionTitleMobile {
+    display: flex;
+    // max-width: 340px;
+    justify-content: center;
+    position: relative;
+    margin: 10px 40px;
+
+    @media (min-width: $breakpoint_768) {
+        display: none;
+    }
+}
+
+.exclusiveSectionContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: $maxWidthContainer;
+    padding: 20px 0;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint_576) {
+        padding: 20px 0;
+    }
+
+    @media (min-width: $breakpoint_768) {
+        // gap: 18px;
+        padding: 20px 60px;
+    }
+}
+
+.exclusiveSectionContent {
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    @media (min-width: $breakpoint_768) {
+        display: flex;
+    }
+}
+
+.exclusiveSectionContentV12 {
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    @media (min-width: $breakpoint_1200) {
+        display: flex;
+    }
+}
+
+.exclusiveSectionSlider {
+    width: 100%;
+
+    @media (min-width: $breakpoint_768) {
+        display: none !important;
+    }
+}
+
+.exclusiveSectionSliderV12 {
+    width: 100%;
+
+    @media (min-width: $breakpoint_1200) {
+        display: none !important;
+    }
+}
+
+.exclusiveSectionSliderSlide {
+    padding: 12px 36px 26px;
+}
+
+.exclusiveSectionImageSide {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.exclusiveSectionCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    padding: 28px;
+    margin: 0 auto;
+
+    background-image: url('/images/lp_v15/desktop/card.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* MOBILE FIX */
+    background-size: contain;
+
+    border-radius: 32px;
+    z-index: 1;
+
+    transition: filter 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        filter: brightness(1.15);
+        transform: scale(1.03);
+    }
+
+    &.christmas {
+        background-image: url('/images/lp_v15/desktop/card.png');
+    }
+
+    @media (min-width: $breakpoint_768) {
+        width: 370px;
+        aspect-ratio: 1393 / 1620;
+
+        /* DESKTOP SAME AS BEFORE */
+        background-size: cover;
+        background-position: center;
+
+        padding: 20px 30px;
+    }
+}
+
+.exclusiveSectionCardName {
+    width: 100%;
+    margin-bottom: 0px;
+
+    img {
+        aspect-ratio: 963 / 239;
+        object-fit: contain;
+    }
+
+    @media (min-width: $breakpoint_768) {
+        margin-bottom: 8px;
+    }
+}
+
+.exclusiveSectionCardCoins {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coinsFree {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.coinsFreeIcon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: -4px;
+
+    @media (min-width: $breakpoint_768) {
+        width: 34px;
+        height: 34px;
+        margin-bottom: -6px;
+    }
+}
+
+.coinsFreeText {
+    position: relative;
+    text-align: center;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: 1.239px;
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint_768) {
+        font-size: 34px;
+    }
+}
+
+.coinsFreeTextShadow {
+    color: rgba(0, 0, 0, 0.25);
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.coinsFreeTextGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    background: linear-gradient(180deg, #88FF6E 0%, #00D389 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.coinsTotal {
+    position: relative;
+    text-align: center;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: 1.239px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+    @media (min-width: $breakpoint_768) {
+        font-size: 34px;
+        margin-bottom: 18px;
+    }
+}
+
+.coinsTotalTextShadow {
+    color: rgba(0, 0, 0, 0.25);
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.coinsTotalTextGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    background: linear-gradient(180deg, #FFF3CB 0%, #F6BE0A 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.coinsAction {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.coinsActionButton {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    // background-color: rgba(36, 16, 86, 0.80);
+    border-radius: 32px;
+    border: 1.106px solid linear-gradient(180deg, #FFF3CB 0%, #F6BE0A 100%);
+    box-shadow: 0 0 4.425px 2.212px #9F640B;
+    padding: 4px 18px;
+    margin: 0px 20px 15px;
+}
+
+.coinsActionValue {
+    width: 80%;
+}
+
+.coinsDiscount {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border-radius: 16px;
+    padding: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: 0 2.074px 0 0 rgba(0, 0, 0, 0.60);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px; // border thickness
+        border-radius: 16px;
+        background: linear-gradient(180deg, #E08533 0%, #FAE072 50%, #9F640B 100%);
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+
+        pointer-events: none;
+    }
+
+    @media (min-width: $breakpoint_768) {
+        padding: 16px;
+    }
+}
+
+.coinsDiscountValue {
+    color: #FFF;
+    text-shadow: 0 4.425px 0 rgba(0, 0, 0, 0.25);
+    font-size: 66.372px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103.706px;
+    letter-spacing: 2.655px;
+}
+
+.coinsDiscountGet {
+    width: 100%;
+    position: absolute;
+    top: -50%;
+    left: 0%;
+    color: #3E00AA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: 0.622px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 4px;
+    background-color: rgb(255, 225, 4);
+    animation: 3s linear 0s infinite normal forwards running card-cta-text;
+}
+
+.exclusiveSectionCoinsR,
+.exclusiveSectionCoinsL {
+    display: none;
+    width: calc(100% - 370px);
+    object-fit: contain;
+
+    @media (min-width: $breakpoint_1200) {
+        display: block;
+    }
+}
+
+.exclusiveSectionButtonContainer {
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    @media (min-width: $breakpoint_768) {
+        max-width: 650px;
+    }
+}

@@ -1,0 +1,149 @@
+@use '../../../../../styles/abstract/breakpoints' as *;
+@use '../../../../../styles/abstract/variables' as *;
+
+.buttonInnerBorder,
+.buttonInnerFill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.buttonInnerBorder {
+  &.border0 {
+    background: #321a00;
+    border-radius: 2.9rem;
+    padding: 0.1rem;
+  }
+
+  &.border1 {
+    background: linear-gradient(180deg, #ffffac, #9c7800);
+    border-radius: 2.8rem;
+    padding: 0.25rem;
+  }
+
+  &.border2 {
+    background: linear-gradient(180deg, #321a00, #745101);
+    border-radius: 2.55rem;
+    padding: 0.1rem;
+  }
+}
+
+.buttonInnerFill {
+  &.fill0 {
+    background: linear-gradient(180deg, #067940, #258b4f);
+    border-radius: 2.45rem;
+    padding: 0.15rem;
+  }
+
+  &.fill1 {
+    background: linear-gradient(180deg, #5bd08f, #63dd9a);
+    border-radius: 2.3rem;
+    padding: 0.1rem;
+  }
+
+  .fill1Blur {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #5bd08f, #63dd9a);
+    border-radius: inherit;
+    filter: blur(0.15rem);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &.fill2 {
+    background: linear-gradient(180deg, #92f1c6 0%, #44bd81 35%, #33a769 65%, #4db77d 100%);
+    border-radius: 2.2rem;
+    padding: 0.2rem;
+  }
+
+  &.fill3 {
+    background: linear-gradient(180deg, #92f1c6 0%, #44bd81 40%, #33a769 60%, #4db77d 100%);
+    border-radius: 2rem;
+    padding: 0.2rem;
+  }
+
+  &.fill4 {
+    background: linear-gradient(180deg, #92f1c6 0%, #44bd81 45%, #33a769 55%, #4db77d 100%);
+    border-radius: 1.8rem;
+    padding: 0.4rem 1.5rem;
+  }
+}
+
+.buttonInnerText {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: #fff75c;
+  text-shadow:
+    -0.75px 2px 1px rgba(158, 62, 0, 1),
+    0.75px 2px 1px rgba(158, 62, 0, 1),
+    -0.75px 0 1px rgba(158, 62, 0, 1),
+    0.75px 0 1px rgba(158, 62, 0, 1),
+    -0.75px -0.5px 1px rgba(158, 62, 0, 1),
+    0.75px -0.5px 1px rgba(158, 62, 0, 1);
+  z-index: 2;
+  line-height: 120%;
+
+  &.notFoundButton,
+  &.thankYouButton {
+    font-size: 20px;
+
+    @media (min-width: $breakpoint_576) {
+      font-size: 28px;
+    }
+
+    @media (min-width: $breakpoint_768) {
+      font-size: 34px;
+    }
+
+    @media (min-width: $breakpoint_992) {
+      font-size: 40px;
+    }
+  }
+
+  &.mainSectionButton,
+  &.winSectionButton {
+    font-size: 22px;
+
+    @media (min-width: $breakpoint_576) {
+      font-size: 20px;
+    }
+
+    @media (min-width: $breakpoint_768) {
+      font-size: 24px;
+    }
+
+    @media (min-width: $breakpoint_992) {
+      font-size: 34px;
+    }
+  }
+
+  &.contactFormButton {
+    padding: 0 2rem;
+    font-size: 18px;
+    color: $light;
+    text-shadow:
+      -0.75px 2px 1px rgb(78, 78, 78),
+      0.75px 2px 1px rgba(78, 78, 78, 1),
+      -0.75px 0 1px rgba(78, 78, 78, 1),
+      0.75px 0 1px rgba(78, 78, 78, 1),
+      -0.75px -0.5px 1px rgba(78, 78, 78, 1),
+      0.75px -0.5px 1px rgba(78, 78, 78, 1);
+
+    @media (min-width: $breakpoint_576) {
+      font-size: 20px;
+    }
+
+    @media (min-width: $breakpoint_768) {
+      font-size: 22px;
+    }
+
+    @media (min-width: $breakpoint_992) {
+      font-size: 26px;
+    }
+  }
+}

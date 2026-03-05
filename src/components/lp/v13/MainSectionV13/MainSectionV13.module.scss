@@ -1,0 +1,185 @@
+@use '../../../../styles/abstract/variables' as *;
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.mainSectionV13 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: $maxWidthContainer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainSectionV13Container {
+  position: relative;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -20px;
+
+  @media (min-width: $breakpoint_768) {
+    max-width: initial;
+    flex-direction: row;
+    margin: 70px 0 -50px;
+  }
+}
+
+.mainSectionV13ContainerContent {
+  position: relative;
+  margin-bottom: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+
+  @media (min-width: $breakpoint_768) {
+    align-items: flex-start;
+  }
+}
+
+.mainSectionV13ContainerLana {
+  position: relative;
+  z-index: 2;
+}
+
+.mainSectionV13ContainerLanaCoins {
+  position: absolute;
+  top: -14%;
+  left: -23%;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1721 / 2479;
+}
+
+.mainSectionV13ContainerLanaCTA {
+  position: absolute;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  transform: translate(-65%, -45%);
+
+  @media (min-width: $breakpoint_768) {
+    top: 55%;
+    left: 34%;
+    transform: translate(-66%, -45%);
+  }
+
+  @media (min-width: $breakpoint_992) {
+    top: 55%;
+    left: 34%;
+    transform: translate(-66%, -45%);
+  }
+}
+
+.mainSectionV13ContainerTitleImage {
+  position: relative;
+  margin-bottom: 20px;
+  max-width: 80%;
+}
+
+.mainSectionV13ContainerTextImage {
+  position: relative;
+  max-width: 80%;
+}
+
+.mainSectionV13ContainerLastCTA {
+  margin-bottom: 60px;
+  z-index: 3;
+
+  @media (min-width: $breakpoint_768) {
+    margin-bottom: 140px;
+  }
+}
+
+.mainSectionV13ContainerTitleNext {
+  position: relative;
+  max-width: $maxWidthSmallContainer;
+  padding: 0 20px 40px;
+  z-index: 1;
+
+  @media (min-width: $breakpoint_768) {
+    padding: 0 20px 80px;
+  }
+}
+
+.mainSectionV13ContainerTitleNextImage {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint_768) {
+    width: 60%;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    width: 66%;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    width: 72%;
+  }
+}
+
+.mainSectionV13circleGlow {
+  position: absolute;
+  width: 100px;
+  aspect-ratio: 10 / 10;
+  height: auto;
+  border-radius: 50%;
+  background: #FD9213;
+  box-shadow: 0 0 40px 20px #FD9213;
+  filter: blur(20px);
+}
+
+.mainSectionV13circleGlow1 {
+  width: 5%;
+  top: -18%;
+  right: 0;
+
+  @media (min-width: $breakpoint_768) {
+    top: -30%;
+  }
+}
+
+.mainSectionV13circleGlow2 {
+  width: 10%;
+  bottom: -4%;
+  right: 2%;
+  z-index: 3;
+}
+
+.mainSectionV13circleGlow3 {
+  width: 64%;
+  top: 34%;
+  right: 0;
+  z-index: 1;
+
+  @media (min-width: $breakpoint_768) {
+    width: 34%;
+    top: 2%;
+  }
+}
+
+.mainSectionV13circleGlow4 {
+  width: 5%;
+  top: 62%;
+  left: 20%;
+}
+
+.mainSectionV13circleGlow5 {
+  width: 10%;
+  top: -10%;
+  left: 0;
+}
+
+.mainSectionV13circleGlow6 {
+  width: 24%;
+  bottom: -22%;
+  left: -20%;
+}

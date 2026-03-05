@@ -1,0 +1,95 @@
+variables:
+  REGISTRY_MIRROR: 'docker-hub-proxy.murka.com'
+
+stages:
+  - check
+  - package
+  - deploy
+
+lint:
+  stage: check
+  image: node:20-alpine
+  script:
+    - npm ci
+    - npm run lint
+  artifacts:
+    paths:
+      - node_modules
+
+.build-common: &build-common
+  stage: package
+  image:
+    name: gcr.io/kaniko-project/executor:v1.9.1-debug
+    entrypoint: ['']
+
+.branch-build-common: &branch-build-common
+  <<: *build-common
+  script:
+    - |
+      echo $DOTENV | tr " " "\n" > .env
+      echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+      /kaniko/executor --registry-mirror $REGISTRY_MIRROR --context . --dockerfile Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME$IMAGE_SUFFIX --single-snapshot
+
+build-dev:
+  <<: *branch-build-common
+  only:
+    - dev
+  variables:
+    DOTENV: $DOTENV_DEV
+    IMAGE_SUFFIX: ""
+
+build-main:
+  <<: *branch-build-common
+  only:
+    - main
+  variables:
+    DOTENV: $DOTENV_PROD
+    IMAGE_SUFFIX: ""
+
+build-stg:
+  <<: *branch-build-common
+  only:
+    - stage
+  variables:
+    DOTENV: $DOTENV_STG
+    IMAGE_SUFFIX: ""
+
+build-demo:
+  <<: *branch-build-common
+  only:
+    - main
+  variables:
+    DOTENV: $DOTENV_DEMO
+    IMAGE_SUFFIX: "-demo"
+
+tag_build:
+  <<: *build-common
+  only:
+    - tags
+  script:
+    - |
+      echo $DOTENV_PROD | tr " " "\n" > .env
+      echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+      /kaniko/executor --registry-mirror $REGISTRY_MIRROR --context . --dockerfile Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --destination $CI_REGISTRY_IMAGE:latest --single-snapshot
+
+.deploy: &deploy-common
+  stage: deploy
+  inherit:
+    variables: true
+  trigger:
+    project: sweepstakes/backend/deploy
+    branch: main
+
+deploy-dev:
+  <<: *deploy-common
+  only:
+    - dev
+  variables:
+    JOB_NAME: dev-web-app
+
+deploy-stg:
+  <<: *deploy-common
+  only:
+    - stage
+  variables:
+    JOB_NAME: stg-web-app

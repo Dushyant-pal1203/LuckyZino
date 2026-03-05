@@ -1,0 +1,10 @@
+.modal-content {
+  max-width: 20rem;
+  max-height: 15rem;
+  background-color: transparent;
+}
+
+.modal-close-button {
+  color: #fffbfb;
+  background: #ec67fe4d;
+}

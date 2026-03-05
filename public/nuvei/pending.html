@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Redirecting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<script>
+  window.parent.postMessage({
+    name: 'payment.session_status',
+    data: {
+			provider: "NUVEI",
+			status: 'pending'
+		}
+  }, "*");
+</script>
+<script>
+  (function(h,o,u,n,d) {
+    h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+    d=o.createElement(u);d.async=1;d.src=n
+    n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+  })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js','DD_RUM')
+  window.DD_RUM.onReady(function() {
+    window.DD_RUM.init({
+      clientToken: 'pub18e7fe6f3a50e9c651221ba5a51d09f7',
+      applicationId: 'c6f173db-e100-4d13-9a3b-8da91e46c54f',
+      // site: '<SITE>',
+      service: 'next-app',
+      env: window.location.hostname.includes('stg') ? 'stage':'prod',
+      // version: '1.0.0'
+    });
+  })
+</script>
+</body>
+</html>

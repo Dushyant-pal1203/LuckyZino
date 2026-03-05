@@ -1,0 +1,361 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+@keyframes card-cta-text {
+
+  0%,
+  50% {
+    top: -50%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.exclusiveSectionComponent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('/images/lp_v7/Shine.png');
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.exclusiveSectionTitle {
+  display: none;
+  max-width: 440px;
+  justify-content: center;
+  position: relative;
+
+  @media (min-width: $breakpoint_768) {
+    display: flex;
+  }
+}
+
+.exclusiveSectionTitleMobile {
+  display: flex;
+  max-width: 440px;
+  justify-content: center;
+  position: relative;
+
+  @media (min-width: $breakpoint_768) {
+    display: none;
+  }
+}
+
+.exclusiveSectionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: $maxWidthContainer;
+  padding: 20px 0;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 20px 0;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    gap: 18px;
+    padding: 40px 20px 60px;
+  }
+}
+
+.exclusiveSectionContent {
+  width: 100%;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  @media (min-width: $breakpoint_768) {
+    display: flex;
+  }
+}
+
+.exclusiveSectionContentV12 {
+  width: 100%;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  @media (min-width: $breakpoint_1200) {
+    display: flex;
+  }
+}
+
+.exclusiveSectionSlider {
+  width: 100%;
+
+  @media (min-width: $breakpoint_768) {
+    display: none !important;
+  }
+}
+
+.exclusiveSectionSliderV12 {
+  width: 100%;
+
+  @media (min-width: $breakpoint_1200) {
+    display: none !important;
+  }
+}
+
+.exclusiveSectionSliderSlide {
+  padding: 12px 36px 26px;
+}
+
+.exclusiveSectionImageSide {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.exclusiveSectionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  min-width: 300px;
+  padding: 28px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(98, 0, 183, 0.30), rgba(98, 0, 183, 0.30)), url('/images/lp_v7/ExclusiveSectionCard/cardBG.avif'), url('/images/lp_v7/ExclusiveSectionCard/cardBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  border-radius: 32px;
+  border: 6.345px solid #FFD6F7;
+  box-shadow: 0 3.694px 2.955px rgba(74, 9, 100, 0.28), inset 0 0 .238px 1.586px #FFA9F6, 0 0 10px 4px rgba(204, 0, 255, 0.92), inset 0 0 10px 4px rgba(204, 0, 255, 0.92);
+  z-index: 1;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
+
+  &.christmas {
+    background-image: linear-gradient(rgba(98, 0, 183, 0.30), rgba(98, 0, 183, 0.30)), 
+      url('/images/lp_v12/ExclusiveSectionCard/cardBG.png');
+  }
+
+  @media (min-width: $breakpoint_768) {
+    width: 370px;
+    min-width: 370px;
+    aspect-ratio: 1393 / 1620;
+    padding: 22px 32px 32px;
+  }
+}
+
+.exclusiveSectionCardName {
+  width: 100%;
+  margin-bottom: 8px;
+
+  img {
+    aspect-ratio: 963 / 239;
+    object-fit: contain;
+  }
+}
+
+.exclusiveSectionCardCoins {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coinsFree {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.coinsFreeIcon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: -4px;
+
+  @media (min-width: $breakpoint_768) {
+    width: 34px;
+    height: 34px;
+    margin-bottom: -6px;
+  }
+}
+
+.coinsFreeText {
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: 1.239px;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint_768) {
+    font-size: 34px;
+  }
+}
+
+.coinsFreeTextShadow {
+  color: rgba(0, 0, 0, 0.25);
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.coinsFreeTextGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: linear-gradient(180deg, #62FF8C 0%, #00F566 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coinsTotal {
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: 1.239px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+
+  @media (min-width: $breakpoint_768) {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+}
+
+.coinsTotalTextShadow {
+  color: rgba(0, 0, 0, 0.25);
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.coinsTotalTextGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: linear-gradient(180deg, #FFD562 0%, #F5BB00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coinsAction {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.coinsActionButton {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  background-color: rgba(36, 16, 86, 0.80);
+  border-radius: 32px;
+  border: 1.106px solid #FFD6F7;
+  box-shadow: 0 0 4.425px 2.212px #E065FF;
+  padding: 4px 18px;
+  margin: 0px 20px;
+}
+
+.coinsActionValue {
+  width: 80%;
+}
+
+.coinsDiscount {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid #F56476;
+  background:
+    url('/images/lp_v7/ExclusiveSectionCard/Rectangle.png') padding-box,
+    linear-gradient(to right, rgba(245, 100, 118, 0.40) 0%, rgba(36, 16, 86, 0.40) 100%) padding-box;
+  background-color: rgba(36, 16, 86, 0.6);
+  box-shadow: 0 2.074px 0 0 rgba(0, 0, 0, 0.60);
+  background-size: 110% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay, multiply;
+  padding: 10px;
+  margin-bottom: 22px;
+  overflow: hidden;
+
+  @media (min-width: $breakpoint_768) {
+    padding: 16px;
+  }
+}
+
+.coinsDiscountValue {
+  color: #FFF;
+  text-shadow: 0 4.425px 0 rgba(0, 0, 0, 0.25);
+  font-size: 66.372px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 103.706px;
+  letter-spacing: 2.655px;
+}
+
+.coinsDiscountGet {
+  width: 100%;
+  position: absolute;
+  top: -50%;
+  left: 0%;
+  color: #3E00AA;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: 0.622px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 4px;
+  background-color: rgb(255, 225, 4);
+  animation: 3s linear 0s infinite normal forwards running card-cta-text;
+}
+
+.exclusiveSectionCoinsR,
+.exclusiveSectionCoinsL {
+  display: none;
+  width: calc(100% - 370px);
+  object-fit: contain;
+
+  @media (min-width: $breakpoint_1200) {
+    display: block;
+  }
+}
+
+.exclusiveSectionButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

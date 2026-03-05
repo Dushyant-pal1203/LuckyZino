@@ -1,0 +1,33 @@
+.lana {
+  width: 43%;
+  bottom: -5.5%;
+  left: 21.5%;
+  z-index: 3;
+  position: absolute;
+  height: 67%;
+
+  @media (max-width:1000px) {
+    position: absolute;
+    display: block;
+    width: 78%;
+    bottom: 0%;
+    left: -5.5%;
+    z-index: 3;
+    height: 53%;
+  }
+}
+
+.zuzu {
+  position: absolute;
+  width: 35%;
+  bottom: -3.5%;
+  left: 60%;
+  height: 43%;
+
+  @media (max-width:1000px) {
+    width: 38%;
+    bottom: -3.5%;
+    left: 50%;
+    z-index: 3;
+  }
+}

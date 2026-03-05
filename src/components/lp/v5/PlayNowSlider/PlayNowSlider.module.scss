@@ -1,0 +1,169 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+.playNowSliderSliderComponent {
+  position: relative;
+  width: 100%;
+  background-image: url('/images/lp_v5/PlayNowSlider/sliderBG.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 28px;
+  border-top: 2px solid #6929D8;
+  border-bottom: 2px solid #6929D8;
+
+  &::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url('/images/lp_v5/PlantsL.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    z-index: 2;
+
+    @media (min-width: $breakpoint_992) {
+      display: block;
+    }
+  }
+
+  &::after {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url('/images/lp_v5/PlantsR.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    z-index: 2;
+
+    @media (min-width: $breakpoint_992) {
+      display: block;
+    }
+  }
+}
+
+.playNowSliderBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px 12px;
+
+  @media (min-width: $breakpoint_992) {
+    padding: 24px 20px 4px;
+  }
+}
+
+.playNowSliderBullet {
+  display: inline-block;
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 0 4px;
+  background: #6929D8;
+  transition: background 0.3s;
+}
+
+.playNowSliderBulletActive {
+  background: #FFF;
+  box-shadow: 0 0 4px 1px #F56476;
+}
+
+.playNowSliderSlide {
+  width: 385px !important;
+  height: 280px !important;
+  border-radius: 32px !important;
+  overflow: hidden !important;
+
+  @media (min-width: $breakpoint_992) {
+    width: 532px !important;
+    height: 280px !important;
+  }
+}
+
+.playNowSlideContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  border: 2px solid #8F6D00;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, #6929D8 0%, #6929D8 100%), #4B3E1D;
+  background-blend-mode: overlay, normal, normal, normal;
+  box-shadow: 0 0 0 1px #6A4801;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.playNowCardContent {
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.playNowCardTitle {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: 1.28px;
+}
+
+.playNowCardText {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.72px;
+}
+
+.playNowCardAction {
+  align-self: flex-end;
+}
+
+.playNowCardButton {
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.20);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 16px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  margin-top: 4px;
+  border: none;
+  outline: none;
+  background-image: url('/images/lp_v5/PlayNowSlider/RegularButton.png');
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 176px;
+  height: 56px;
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
+}

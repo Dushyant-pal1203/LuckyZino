@@ -1,0 +1,63 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+.bonusSliderV13Component {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  background-color: $darkBlue;
+}
+
+.bonusSliderV13Container {
+  width: 100%;
+  height: 100%;
+}
+
+.bonusSliderV13Slide {
+  padding: 10px 16px;
+  background-blend-mode: overlay, normal;
+  aspect-ratio: 1514 / 750;
+  max-width: 100%;
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  @media (min-width: $breakpoint_768) {
+    max-width: 75%;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    max-width: 70%;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    max-width: 60%;
+  }
+
+  @media (min-width: $breakpoint_1400) {
+    max-width: 600px;
+  }
+
+  @media (min-width: $breakpoint_1920) {
+    max-width: 700px;
+  }
+
+  img {
+    object-fit: contain;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    filter: brightness(1.15);
+
+    img {
+      transform: scale(1.03);
+    }
+  }
+}

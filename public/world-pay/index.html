@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WordPay</title>
+	<script
+		src='https://payments.worldpay.com/resources/hpp/integrations/embedded/js/hpp-embedded-integration-library.js'></script>
+	<script crossorigin src="https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js"></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+			background: #fff;
+		}
+
+		apple-pay-button {
+			--apple-pay-button-width: 150px;
+			--apple-pay-button-height: 30px;
+			--apple-pay-button-border-radius: 3px;
+			--apple-pay-button-padding: 0px 0px;
+			--apple-pay-button-box-sizing: border-box;
+		}
+
+		.frame-content {
+			width: 100%;
+		}
+
+		.lz-branding {
+			background-image: url('/world-pay/assets/bg.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			width: 100%;
+			max-width: 748px;
+			height: 12rem;
+			margin: 0 auto;
+			border-radius: .4em;
+			position: relative;
+		}
+
+		.lz-branding .container {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+		}
+
+		.lz-branding .container .container-logo {
+			width: 60%;
+		}
+
+		.lz-branding .container .container-logo .logo {
+			width: 85%;
+			height: 100%;
+			padding-left: 4%;
+			object-fit: contain;
+		}
+
+		.lz-branding .container .maskots {
+			width: 40%;
+			min-width: 300px;
+			position: relative;
+		}
+
+		.lz-branding .container .maskots .lana {
+			position: absolute;
+			right: 5%;
+			bottom: 0;
+		}
+
+		.lz-branding .container .maskots .zuzu {
+			position: absolute;
+			right: 45%;
+			bottom: 0;
+		}
+
+		.order-summary-container {
+			background-color: #e4e3de;
+			width: 100%;
+			max-width: 750px;
+			margin: 0 auto;
+			margin-bottom: -0.65rem;
+			margin-top: 1rem;
+			border-radius: .4em;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			position: relative;
+		}
+
+		.order-summary-container .box {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			direction: ltr;
+			margin: 0 0 .4em;
+			position: relative;
+			padding: 0.4rem;
+			padding-bottom: 0.2rem;
+			color: inherit;
+		}
+
+		.details {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			color: inherit;
+			border: 1px solid #e4e3de;
+			border-radius: .4em;
+			padding: 1em;
+			background-color: #fff;
+		}
+
+		.section-header {
+			-webkit-text-size-adjust: 100%;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.2em;
+			margin: 0;
+			padding: 0 0 10px;
+			font-weight: 700;
+			display: inline-block;
+			color: #535759;
+		}
+
+		.details .row {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			color: inherit;
+			overflow: hidden;
+			margin: 0;
+		}
+
+		.details .row .field-label {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #535759;
+			font-weight: 700;
+		}
+
+		.details .row dd {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			color: inherit;
+			margin-inline-start: 0;
+			color: rgb(83, 87, 89);
+		}
+
+		.apple-pay-el {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			pointer-events: none;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			color: #53575900;
+			font-family: Arial, Helvetica, sans-serif;
+			margin: 0 auto;
+			max-width: 50em;
+			position: relative;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el {
+			border: 1px solid #00000000;
+			border-radius: .4em;
+			margin: 0;
+			padding: .4em .4em 0;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .debug {
+			background: #ffffff00;
+			border: 1px solid #dddddd00;
+			border-radius: .4em;
+			color: #eb0c0000;
+			font-weight: 700;
+			margin: 0 0 5px;
+			padding: 8px 10px;
+			text-align: center;
+			opacity: 0;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content {
+			outline: none;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box {
+			border: 1px solid #e4e3de00;
+			border-radius: .4em;
+			margin: 0 0 .4em;
+			padding: 1em;
+			position: relative;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .section-header {
+			-webkit-text-size-adjust: 100%;
+			word-wrap: break-word;
+			line-height: 1.4;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.2em;
+			margin: 0;
+			padding: 0 0 10px;
+			font-weight: 700;
+			color: #53575900;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .express-checkout-container {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			line-height: 1.4;
+			color: #53575900;
+			font-family: Arial, Helvetica, sans-serif;
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .express-checkout-container .emulate {
+			-webkit-text-size-adjust: 100%;
+			font-size: 15px;
+			word-wrap: break-word;
+			color: #53575900;
+			font-family: Arial, Helvetica, sans-serif;
+			display: inline-block;
+			align-self: auto;
+			flex-grow: 1;
+			line-height: 0px;
+			margin: .5%;
+			width: 100%;
+			height: 40px;
+		}
+
+		.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .express-checkout-container .apple-pay-custom-button-wp {
+			max-width: 20.5rem;
+			margin: .5%;
+			--apple-pay-button-width: 100%;
+			--apple-pay-button-height: 40px;
+		}
+
+		@media only screen and (min-width: 481px) {
+			.details .row {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.details .field-label {
+				padding-bottom: .6em;
+				text-align: left;
+				width: 35%;
+			}
+
+			.details dd {
+				padding-bottom: .6em;
+				width: 65%;
+				word-break: break-word;
+			}
+		}
+
+		@media only screen and (min-width: 480px) {
+			.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .express-checkout-container {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .express-checkout-container .emulate {
+				max-width: 21rem;
+			}
+		}
+
+		@media only screen and (max-width: 480px) {
+			.details dd {
+				display: block;
+				padding-bottom: .6em;
+				width: 100%;
+				word-break: break-word;
+			}
+
+			.details .field-label {
+				display: block;
+				text-align: left;
+				width: 100%;
+			}
+
+			.apple-pay-el .apple-pay-wrapper-el .apple-pay-main-el .dyn-content .box .express-checkout-container {
+				flex-direction: column;
+			}
+		}
+
+		@media screen and (max-width: 630px) {
+			.lz-branding .container .container-logo {
+				width: 50%;
+			}
+
+			.lz-branding .container .container-logo .logo {
+				width: 100%;
+				padding-left: 0;
+				filter: drop-shadow(2px 2px 16px black);
+			}
+
+			.lz-branding .container .maskots {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.lz-branding .container .maskots .lana {
+				left: 1%;
+				right: unset;
+				object-fit: scale-down;
+				max-width: 30%;
+			}
+
+			.lz-branding .container .maskots .zuzu {
+				right: 2%;
+				object-fit: scale-down;
+				max-width: 25%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="lz-branding">
+		<div class="container">
+			<div class="container-logo">
+				<img class="logo" alt="logo" src="/world-pay/assets/logo.png">
+			</div>
+			<div class="maskots">
+				<img class="lana" alt="lana" src="/world-pay/assets/lana.png">
+				<img class="zuzu" alt="zuzu" src="/world-pay/assets/zuzu.png">
+			</div>
+		</div>
+	</div>
+	<div class="order-summary-container">
+		<div class="box">
+			<div class="details">
+				<h2 id="showOrderSummary" class="section-header">
+					<span>
+						Order summary
+					</span>
+				</h2>
+				<div>
+					<dl class="row">
+						<dt class="field-label">
+							Reference:
+						</dt>
+						<dd id="orderRef" class="summaryRef"></dd>
+					</dl>
+
+					<dl class="row">
+						<dt class="field-label">
+							Description:
+						</dt>
+						<dd id="orderDescription" class="summaryDesc"></dd>
+					</dl>
+
+					<dl class="row summaryAmount">
+						<dt class="field-label">
+							<strong>
+								Amount <span dir="ltr">(USD)</span>:
+							</strong>
+						</dt>
+						<dd id="orderAmount" class="summaryAmount"></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="frame-content" id='custom-html'>
+	</div>
+	<script type="text/javascript">
+		function isAndroidUserAgent() {
+			// navigator.userAgent returns the user agent string of the browser.
+			// We convert it to lowercase to perform a case-insensitive check.
+			const userAgent = navigator.userAgent.toLowerCase();
+
+			// Check if the user agent string contains the word "android".
+			// This is a common and generally reliable way to detect Android devices.
+			return userAgent.includes("android");
+		}
+
+		try {
+			const query = new URLSearchParams(window.location.search);
+			const paymentData = JSON.parse(atob(query.get('paymentData')));
+			const amountMajor = paymentData.price.replace('$', '');
+			const host = window.location.host;
+
+			const orderRefEl = document.getElementById('orderRef');
+			const orderDescriptionEl = document.getElementById('orderDescription');
+			const orderAmountEl = document.getElementById('orderAmount');
+
+			orderRefEl.innerText = paymentData.orderId;
+			orderDescriptionEl.innerText = paymentData.description;
+			orderAmountEl.innerHTML = paymentData.price;
+
+			const successUrl = `${window.location.origin}/world-pay/success.html`;
+			const failureUrl = `${window.location.origin}/world-pay/failure.html`;
+			const errorUrl = `${window.location.origin}/world-pay/error.html`;
+
+			function AddApplePayBtn() {
+				if (!isAndroidUserAgent()) {
+					const iframeInter = document.getElementById('wp-cl-custom-html-iframe');
+					if (iframeInter) {
+
+						const parent = document.getElementById('wp-cl');
+						parent.style.position = 'relative';
+
+						const applel = document.createElement('div');
+						applel.classList.add('apple-pay-el');
+						parent.appendChild(applel);
+
+						let oldSize = parent.clientHeight;
+						const resizeObserver = new ResizeObserver(entries => {
+							for (const entry of entries) {
+								if (entry.contentRect.height / oldSize <= 0.65) {
+									applel.style.opacity = 0;
+								} else {
+									applel.style.opacity = 1;
+								}
+								oldSize = entry.contentRect.height;
+							}
+						});
+
+						if (parent) {
+							resizeObserver.observe(parent);
+						}
+
+						const wrapper = document.createElement('div');
+						wrapper.classList.add('apple-pay-wrapper-el');
+						applel.appendChild(wrapper);
+
+						const main = document.createElement('div');
+						main.classList.add('apple-pay-main-el');
+						wrapper.appendChild(main);
+
+						if (window.location.host.includes('dev') || window.location.host.includes('stg')) {
+							const debugEl = document.createElement('div');
+							debugEl.classList.add('debug');
+							debugEl.innerText = 'Test mode - This is not live transaction.';
+							main.appendChild(debugEl);
+						}
+
+						const dyncontent = document.createElement('div');
+						dyncontent.classList.add('dyn-content');
+						main.appendChild(dyncontent);
+
+						const box = document.createElement('div');
+						box.classList.add('box');
+						dyncontent.appendChild(box);
+
+						const h2 = document.createElement('h2');
+						h2.innerText = 'Express Checkout';
+						h2.classList.add('section-header');
+						box.appendChild(h2);
+
+						const checkout = document.createElement('div');
+						checkout.classList.add('express-checkout-container');
+						box.appendChild(checkout);
+
+						const emulate = document.createElement('div');
+						emulate.classList.add('emulate');
+						checkout.appendChild(emulate);
+
+						const btn = document.createElement('apple-pay-button');
+						btn.classList.add('apple-pay-custom-button-wp');
+						btn.setAttribute('setAttribute', 'black');
+						btn.setAttribute('type', 'plain');
+						btn.setAttribute('locale', 'en-US');
+						btn.setAttribute('style', 'pointer-events: all;')
+						btn.addEventListener('click', onApplePayButtonClicked);
+
+						checkout.appendChild(btn);
+					}
+				}
+			}
+
+			let isLoaded = false;
+			const customOptions = {
+				url: paymentData.url,
+				type: 'iframe',
+				accessibility: true,
+				disableScrolling: true,
+				inject: 'onload',
+				target: 'custom-html',
+				debug: false,
+				language: 'en',
+				country: 'gb',
+				successURL: '',
+				cancelURL: '',
+				failureURL: '',
+				pendingURL: '',
+				errorURL: '',
+				resultCallback: function (responseData) {
+					let redirectUrl;
+					const status = responseData.order.status;
+					console.log(status, 'status');
+					switch (status) {
+						case "success":
+							redirectUrl = successUrl;
+							break;
+						case "failure":
+							redirectUrl = failureUrl;
+							break;
+						case "error":
+							redirectUrl = errorUrl;
+							break;
+						case "pending":
+							redirectUrl = `${window.location.origin}/world-pay/pending.html`;
+							break;
+						case "cancelled_by_shopper":
+							redirectUrl = `${window.location.origin}/world-pay/back.html`;
+							break;
+						default:
+							redirectUrl = errorUrl;
+					}
+					window.location = redirectUrl;
+				},
+				flowCallback: function (callbackData) {
+					if(isLoaded) return;
+					AddApplePayBtn();
+					isLoaded = true;
+				}
+			}
+
+			async function onApplePayButtonClicked() {
+				if (!ApplePaySession) {
+					return;
+				}
+
+				try {
+					const request = {
+						countryCode: 'US',
+						currencyCode: 'USD',
+						supportedNetworks: ['amex', 'discover', 'masterCard', 'visa'],
+						merchantCapabilities: ['supports3DS'], // ✅ only supports3DS
+						total: { label: paymentData.description, amount: amountMajor },
+					};
+
+					const session = new window.ApplePaySession(3, request);
+
+					session.onvalidatemerchant = async (event) => {
+						try {
+							const res = await fetch(`${window.location.origin}/api/apple-pay/validate-merchant`, {
+								method: 'POST',
+								headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify({ validationURL: event.validationURL }),
+							});
+							if (!res.ok) {
+								console.warn('Merchant validation failed');
+								return session.abort();
+							}
+
+							const merchantSession = await res.json();
+							session.completeMerchantValidation(merchantSession);
+						} catch (e) {
+							console.error(e);
+							session.abort();
+						}
+					};
+
+					session.onpaymentauthorized = async (event) => {
+						try {
+							const applePaymentData = event.payment.token.paymentData;
+
+							const body = {
+								invoiceId: paymentData.orderId,
+								paymentData: applePaymentData,
+							};
+
+							const res = await fetch(`${window.location.origin}/api/apple-pay/payment-authorized`, {
+								method: 'POST',
+								headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify(body),
+							});
+
+							const json = (await res.json());
+
+							if (res.ok && json.status === 'success') {
+								session.completePayment({ status: window.ApplePaySession.STATUS_SUCCESS });
+								window.location.replace(successUrl);
+							} else {
+								session.completePayment({ status: window.ApplePaySession.STATUS_FAILURE });
+								window.location.replace(failureUrl);
+							}
+						} catch (e) {
+							console.error(e);
+							session.completePayment({ status: window.ApplePaySession.STATUS_FAILURE });
+							window.location.replace(errorUrl);
+						}
+					};
+
+					session.oncancel = () => alert('Payment cancelled');
+
+					session.begin();
+				} catch (e) {
+					// Handle errors
+					console.warn(e);
+				}
+			}
+			const libraryObject = new WPCL.Library();
+			libraryObject.setup(customOptions);
+		} catch (e) {
+			console.warn('WorldPay: Payment init faild ', e);
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+@keyframes floatLeft {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-15px, -10px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes floatRight {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(15px, -10px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.winSectionComponent {
+  position: relative;
+  background-image: url(../../../../../public/images/mainPage/winSection/winSection_BG.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.winSectionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: $maxWidthContainer;
+  padding: 40px 20px;
+  margin: 0 auto;
+  gap: 18px;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 40px 40px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    padding: 70px 80px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contentSide {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  @media (min-width: $breakpoint_992) {
+    width: 50%;
+    margin-left: -2%;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    margin-left: -4%;
+  }
+}
+
+.winSectionTitle {
+  font-size: 28px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  color: transparent;
+  background: $goldGradientLight;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (min-width: $breakpoint_576) {
+    font-size: 38px;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    font-size: 44px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    font-size: 54px;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    font-size: 64px;
+  }
+
+  &:nth-of-type(1) {
+    br {
+      @media (min-width: 375px) {
+        display: none;
+      }
+
+      @media (min-width: $breakpoint_992) {
+        display: block;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    margin-bottom: 16px;
+  }
+}
+
+.winSectionTitleGlow {
+  font-size: 28px;
+  line-height: 1.2;
+  color: $light;
+  -webkit-text-fill-color: $light;
+  text-transform: uppercase;
+  text-shadow: $pinkGlow;
+
+  @media (min-width: $breakpoint_576) {
+    font-size: 38px;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    font-size: 44px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    font-size: 54px;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    font-size: 64px;
+  }
+}
+
+.imageSide {
+  position: relative;
+  width: 50%;
+
+  @media (min-width: $breakpoint_992) {
+    width: 42%;
+    margin-right: 2%;
+    order: 2;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    margin-right: 4%;
+  }
+
+  @media (min-width: $breakpoint_1920) {
+    width: 50%;
+    margin-right: 2%;
+  }
+}
+
+.chest {
+  position: relative;
+  aspect-ratio: 967 / 693;
+  z-index: 1;
+}
+
+.chestGlow {
+  position: absolute;
+  width: 250%;
+  height: 210%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flyCoins {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+}
+
+.flyCoin_1 {
+  aspect-ratio: 440 / 392;
+  width: 27%;
+  left: 0;
+  top: 1%;
+}
+
+.flyCoin_2 {
+  aspect-ratio: 440 / 361;
+  width: 20%;
+  left: -20%;
+  top: 30%;
+}
+
+.flyCoin_3 {
+  aspect-ratio: 88 / 54;
+  width: 30%;
+  bottom: 12%;
+  left: -14%;
+}
+
+.flyCoin_4 {
+  aspect-ratio: 88 / 54;
+  width: 30%;
+  right: -14%;
+  bottom: 8%;
+}
+
+.flyCoin_5 {
+  aspect-ratio: 440 / 397;
+  width: 20%;
+  right: -20%;
+  top: 30%;
+}
+
+.flyCoin_6 {
+  aspect-ratio: 440 / 412;
+  width: 27%;
+  right: 0;
+  top: 1%;
+}
+
+.coinLeft {
+  animation: floatLeft 4s ease-in-out infinite;
+
+  &.flyCoin_1 {
+    animation-delay: 0.2s;
+  }
+
+  &.flyCoin_2 {
+    animation-delay: 0.5s;
+  }
+}
+
+.coinRight {
+  animation: floatRight 4s ease-in-out infinite;
+
+  &.flyCoin_4 {
+    animation-delay: 0.3s;
+  }
+
+  &.flyCoin_5 {
+    animation-delay: 0.7s;
+  }
+}
+
+.coinTop {
+  animation-delay: 0.5s;
+  animation-duration: 3.5s;
+}
+
+.coinBottom {
+  animation-delay: 1.5s;
+  animation-duration: 4.5s;
+}

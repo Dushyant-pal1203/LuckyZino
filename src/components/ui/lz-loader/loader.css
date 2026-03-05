@@ -1,0 +1,9 @@
+.lz-logo {
+  background-image: url('/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+	background-origin: content-box;
+	height: auto;
+  width: 100%; /* Full width */
+}

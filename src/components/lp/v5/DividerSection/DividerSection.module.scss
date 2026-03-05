@@ -1,0 +1,13 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.divider {
+  position: relative;
+  width: calc(100% + 20px);
+  left: -10px;
+  height: 4vh;
+  z-index: 2;
+  background-color: #2F164E;
+  background-blend-mode: overlay, normal, normal, normal;
+  box-shadow: 0 1px 4px 0 rgba(105, 41, 216, 0.80) inset, 0 -4px 6px 0 rgba(105, 41, 216, 0.20) inset;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}

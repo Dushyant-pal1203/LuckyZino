@@ -1,0 +1,144 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+@keyframes pulseSHINE {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.09);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBTN {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.topContainerV13 {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.topContainerV13Inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  max-width: 460px;
+  padding: 20px 20px 50px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 20px 20px 56px;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    max-width: $maxWidthContainer;
+    gap: 18px;
+    padding: 0 20px 20px;
+    flex-direction: row;
+  }
+}
+
+.topContainerV13ContentSide {
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+
+  @media (min-width: $breakpoint_768) {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    transform: translateY(-50%);
+    width: 36%;
+    max-width: 430px;
+  }
+}
+
+.topContainerV13ButtonContainer {
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+  @media (min-width: $breakpoint_768) {
+    position: relative;
+    inset: 0;
+    transform: none;
+  }
+}
+
+.topContainerV13ButtonAnim {
+  animation: pulseBTN 1s ease-in-out infinite;
+}
+
+.topContainerV13TitleImage {
+  margin-bottom: -30px;
+
+  @media (min-width: $breakpoint_768) {
+    margin-bottom: 16px;
+  }
+}
+
+.topContainerV13ImageSide {
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $breakpoint_768) {
+    width: 66%;
+    margin-right: auto;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 130%;
+    height: auto;
+    background-image: url('/images/lp_v13/Shine.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+    animation: pulseSHINE 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+.topContainerV13CharactersImage {
+  display: block;
+  position: relative;
+  aspect-ratio: 1231 / 923;
+  z-index: 2;
+
+  @media (min-width: $breakpoint_768) {
+    aspect-ratio: 930 / 613;
+  }
+}

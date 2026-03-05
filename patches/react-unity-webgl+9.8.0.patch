@@ -1,0 +1,25 @@
+diff --git a/node_modules/react-unity-webgl/distribution/hooks/use-unity-arguments.js b/node_modules/react-unity-webgl/distribution/hooks/use-unity-arguments.js
+index 41fb5fd..a80aa52 100644
+--- a/node_modules/react-unity-webgl/distribution/hooks/use-unity-arguments.js
++++ b/node_modules/react-unity-webgl/distribution/hooks/use-unity-arguments.js
+@@ -12,6 +12,7 @@ var useUnityArguments = function (unityProps) {
+     return (0, react_1.useMemo)(function () { return ({
+         // Assigns the data URL, framework URL, and code URL to the Unity
+         // arguments object.
++				arguments: unityProps.unityProvider.unityConfig.arguments,
+         dataUrl: unityProps.unityProvider.unityConfig.dataUrl,
+         frameworkUrl: unityProps.unityProvider.unityConfig.frameworkUrl,
+         codeUrl: unityProps.unityProvider.unityConfig.codeUrl,
+diff --git a/node_modules/react-unity-webgl/distribution/types/unity-config.d.ts b/node_modules/react-unity-webgl/distribution/types/unity-config.d.ts
+index 1d9eaa0..8375286 100644
+--- a/node_modules/react-unity-webgl/distribution/types/unity-config.d.ts
++++ b/node_modules/react-unity-webgl/distribution/types/unity-config.d.ts
+@@ -4,7 +4,7 @@ import { UnityArguments } from "./unity-arguments";
+  * This type is used to pick the properties that are configurable from the
+  * Unity Arguments.
+  */
+-type ConfigurableUnityArguments = Pick<UnityArguments, "dataUrl" | "frameworkUrl" | "codeUrl" | "workerUrl" | "streamingAssetsUrl" | "memoryUrl" | "symbolsUrl" | "companyName" | "productName" | "productVersion" | "webglContextAttributes" | "cacheControl">;
++type ConfigurableUnityArguments = Pick<UnityArguments, "arguments" | "dataUrl" | "frameworkUrl" | "codeUrl" | "workerUrl" | "streamingAssetsUrl" | "memoryUrl" | "symbolsUrl" | "companyName" | "productName" | "productVersion" | "webglContextAttributes" | "cacheControl">;
+ /**
+  * The Unity config is provided when instantiating a Unity context. This config
+  * will eventually be used to create the Unity Arguments which will be passed

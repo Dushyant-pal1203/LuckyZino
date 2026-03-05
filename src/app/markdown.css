@@ -1,0 +1,71 @@
+.md-wraper {
+	h1,h2,h3,h4,h5,h6 {
+		margin: 1rem 0.5rem 1rem 0;
+		font-weight: bold;
+		line-height: 1;
+	}
+	
+	h1 {
+		font-size: 28px;
+	}
+	
+	h2 {
+		font-size: 22px;
+	}
+	
+	h3 {
+		font-size: 18px;
+	}
+
+	h6 {
+		font-size: 14px;
+		font-weight: normal;
+	}
+	
+	em {
+		font-style: normal;
+		margin-right: 1rem;
+	}
+	
+	a {
+		color: whitesmoke;
+		text-decoration: underline;
+	}
+	
+	p {
+		font-size: 14px;
+		margin: 0.5rem auto;
+	}
+	
+	blockquote {
+		margin-left: 1rem;
+	}
+	
+	strong {
+		text-shadow: 0 0 1px #ffffff80;
+	}
+	
+	ol, ul {
+		list-style: initial;
+		margin: auto;
+		padding: 0 1rem 0;
+	}
+	
+	ol {
+		list-style: decimal;
+	}
+	
+	table {
+		border: 1px solid white;
+	}
+	
+	tr {
+		border-bottom: 1px solid white;
+		padding: 0.5rem;
+	}
+	
+	th,td {
+		border-right: 1px solid white;
+		padding: 0.5rem;
+	}
+}

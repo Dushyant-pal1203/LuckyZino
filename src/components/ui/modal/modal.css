@@ -1,0 +1,108 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed; /* Stay in place */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  display: flex;
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  z-index: 1000; /* Ensure it's on top */
+  padding: 1rem; /* Add padding for smaller screens */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.3s forwards; /* Fade-in animation */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff;
+  /* padding: 2rem; */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative; /* Needed for absolute positioning of the close button */
+  width: 100%; /* Default width */
+	height: 100%;
+  max-width: 1350px; /* Maximum width */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  transform: scale(0.9); /* Start slightly smaller */
+  animation: scaleUp 0.3s forwards; /* Scale-up animation */
+}
+
+/* Close Button */
+.modal-close-button {
+  position: absolute;
+	top: 10px;
+	right: 15px;
+	background: none;
+	border: none;
+	font-size: 1.8rem;
+	line-height: 1.8rem;
+	cursor: pointer;
+	color: #555;
+	padding: 0.1rem 0.5rem 0.2rem .5rem;
+	z-index: 10000000;
+	background-color: azure;
+	border-radius: 28px;
+}
+
+.modal-close-button:hover {
+  color: #000;
+}
+
+/* Modal Title */
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Modal Body */
+.modal-body {
+	width: 100%;
+	height: 100%;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+	.modal-overlay {
+		padding: 0;
+	}
+  .modal-content {
+    max-width: 98%; /* Use more screen width on smaller devices */
+    padding: 0rem;
+  }
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  .modal-close-button {
+    font-size: 1.6rem;
+    top: 8px;
+    right: 10px;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

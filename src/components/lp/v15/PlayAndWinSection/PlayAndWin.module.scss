@@ -1,0 +1,139 @@
+.playWinCard {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 32px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+    }
+}
+
+.playWinCardTitleImageDesktop {
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+
+    img {
+        max-width: 780px;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.playWinCardTitleImageMobile {
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+
+    img {
+        max-width: 780px;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.playWinCardContentImageDesktop {
+    text-align: center;
+    display: block;
+
+    img {
+        max-width: 900px;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.playWinCardContentImageMobile {
+    text-align: center;
+    display: none;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.playWinCardFeatures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    // margin-top: 20px;
+
+    @media (max-width: 768px) {
+        gap: 20px;
+    }
+}
+
+.playWinCardFeatureItemImage {
+    flex: 0 1 auto;
+    text-align: center;
+
+    img {
+        max-width: 480px;
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
+    @media (max-width: 992px) {
+        img {
+            max-width: 240px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        img {
+            max-width: 200px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        flex: 0 0 100%;
+        max-width: 280px;
+        margin: 0 auto;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GPU DEBUG</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+	<table>
+		<caption>
+			Memory Limits
+		</caption>
+		<thead>
+			<tr>
+				<th scope="col">Max Single Buffer Size</th>
+				<th scope="col">Max Texture Dimension</th>
+				<th scope="col">Max Storage Buffer</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td id="sbuf">0</td>
+				<td id="txtdem">0</td>
+				<td id="storage">0</td>
+			</tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>
+			Buffers
+		</caption>
+		<thead>
+			<tr>
+				<th scope="col">maxBindGroups</th>
+				<th scope="col">maxDynamicStorage</th>
+				<th scope="col">maxVertexBuffers</th>
+				<th scope="col">minStorageAligment</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td id="maxBindGroups">0</td>
+				<td id="maxDynamicStorageBuffersPerPipelineLayout">0</td>
+				<td id="maxVertexBuffers">0</td>
+				<td id="minStorageBufferOffsetAlignment">0</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		async function checkWebGPULimits() {
+			if (!navigator.gpu) {
+				alert("WebGPU not supported.");
+				return;
+			}
+
+			const adapter = await navigator.gpu.requestAdapter();
+			if (!adapter) {
+				alert("No WebGPU adapter found.");
+				return;
+			}
+
+			const limits = adapter.limits;
+
+			// Max size of a single buffer (e.g., a vertex buffer)
+			const maxBufferSizeMB = limits.maxBufferSize / (1024 * 1024);
+
+			// Max dimension for a 2D texture (e.g., 8192 means 8192x8192 pixels)
+			const maxTextureDim = limits.maxTextureDimension2D;
+
+			// Max VRAM (roughly) specifically for storage buffers
+			const maxStorageBufferMB = limits.maxStorageBufferBindingSize / (1024 * 1024);
+			const maxBindGroups = limits.maxBindGroups;
+			const maxDynamicStorageBuffersPerPipelineLayout = limits.maxDynamicStorageBuffersPerPipelineLayout;
+			const maxVertexBuffers = limits.maxVertexBuffers;
+			const minStorageBufferOffsetAlignment = limits.minStorageBufferOffsetAlignment;
+			console.log(minStorageBufferOffsetAlignment)
+
+			document.getElementById('sbuf').innerText = maxBufferSizeMB + "mb";
+			document.getElementById('txtdem').innerText = maxTextureDim + "px";
+			document.getElementById('storage').innerText = maxStorageBufferMB + "px";
+			document.getElementById('maxBindGroups').innerText = maxBindGroups + "";
+			document.getElementById('maxDynamicStorageBuffersPerPipelineLayout').innerText = maxDynamicStorageBuffersPerPipelineLayout + "";
+			document.getElementById('maxVertexBuffers').innerText = maxVertexBuffers + "";
+			document.getElementById('minStorageBufferOffsetAlignment').innerText = minStorageBufferOffsetAlignment + "mb";
+
+
+			const canUse128KUniformsBuffers = adapter?.limits.maxUniformBufferBindingSize >= 128 * 1024;
+			if (!canUse128kUniformBuffers) {
+				document.getElementById('kbuff').innerText = 'True (above 3 GB RAM)';
+			}
+			console.log(`--- WebGPU Adapter Limits ---`);
+			console.log(`Max Single Buffer Size: ${maxBufferSizeMB.toFixed(2)} MB`);
+			console.log(`Max Texture Dimension: ${maxTextureDim}px`);
+			console.log(`Max Storage Buffer: ${maxStorageBufferMB.toFixed(2)} MB`);
+		}
+
+		checkWebGPULimits();
+	</script>
+</body>
+
+</html>

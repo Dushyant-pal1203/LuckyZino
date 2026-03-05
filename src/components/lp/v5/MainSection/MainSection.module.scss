@@ -1,0 +1,221 @@
+@use '../../../../styles/abstract/variables' as *;
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.mainSectionComponent {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 78vh;
+  background-image: url('/images/lp_v5/PR_MOBILE.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint_992) {
+    background-image: url('/images/lp_v5/PR_NEW.png');
+    min-height: auto;
+    align-items: center;
+  }
+
+  &::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url('/images/lp_v5/PlantsL.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    z-index: 1;
+
+    @media (min-width: $breakpoint_992) {
+      display: block;
+    }
+  }
+
+  &::after {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url('/images/lp_v5/PlantsR.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    z-index: 1;
+
+    @media (min-width: $breakpoint_992) {
+      display: block;
+    }
+  }
+}
+
+.mainSectionContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: $maxWidthSmallContainer;
+  padding: 16px 20px 0;
+  margin: 0 auto;
+  z-index: 2;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 16px 20px 0;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    padding: 16px 20px 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.mainSectionRightSide {
+  width: 100%;
+  max-width: 464px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  margin-top: 27px;
+  margin-bottom: 27px;
+
+  @media (min-width: $breakpoint_992) {
+    position: relative;
+    margin-top: 13px;
+    margin-bottom: 0;
+    order: 2;
+  }
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-image: url('/images/lp_v5/ShineMobile.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: $breakpoint_992) {
+      background-image: url('/images/lp_v5/Shine.png');
+      background-size: contain;
+      top: -44%;
+      width: 160%;
+    }
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    background-image: url('/images/lp_v5/ShineStars.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (min-width: $breakpoint_992) {
+      top: -20%;
+    }
+  }
+}
+
+.mainSectionRightSideTop {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30.875px;
+  border: 6.345px solid #FFD6F7;
+  box-shadow: 0 3.966px 3.172px 0 rgba(74, 9, 100, 0.28), 0 0 0.238px 1.586px #FD8DFF inset, 0 0 9.438px 4.759px rgba(204, 0, 255, 0.92);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.mainSectionTitle {
+  position: relative;
+  pointer-events: none;
+  margin-top: -36px;
+
+  @media (min-width: $breakpoint_576) {
+    margin-top: -46px;
+  }
+}
+
+.mainSectionSubTitle {
+  position: relative;
+  pointer-events: none;
+  margin-top: -12px;
+  width: 110%;
+}
+
+.mainSectionFreeTextContainer {
+  position: relative;
+  pointer-events: none;
+  width: 80%;
+}
+
+.mainSectionFreeLabel {
+  position: absolute;
+  top: 76%;
+  left: -10%;
+  pointer-events: none;
+}
+
+.mainSectionLeftSide {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 315px;
+
+  @media (min-width: $breakpoint_992) {
+    display: block;
+    width: 50%;
+    left: 15%;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    left: 20%;
+  }
+}
+
+.mobileCTA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(46, 21, 110, 0.00) 0%, rgba(46, 21, 110, 0.90) 50.48%);
+  padding: 34px 0 12px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+
+  @media (min-width: $breakpoint_992) {
+    display: none;
+  }
+}

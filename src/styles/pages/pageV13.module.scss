@@ -1,0 +1,35 @@
+.landingPageV13 {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #240052;
+}
+
+.landingPageV13topBG {
+  background-image: url('/images/lp_v13/BG_V13_mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-width: 768px) {
+    background-image: url('/images/lp_v13/BG_V13_desktop.jpg');
+  }
+}
+
+.waveDecorV13 {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 474 / 120;
+  background-image: url('/images/lp_v13/VectorMob.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -10%;
+
+  @media (min-width: 768px) {
+    aspect-ratio: 1520 / 409;
+    background-image: url('/images/lp_v13/VectorBig.png');
+    margin-top: -12%;
+  }
+}

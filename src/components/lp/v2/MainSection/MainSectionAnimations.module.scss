@@ -1,0 +1,207 @@
+@keyframes shineV2 {
+  0%,
+  10% {
+    background-position: -1000px;
+  }
+
+  20% {
+    background-position: top left;
+  }
+
+  90% {
+    background-position: top right;
+  }
+
+  100% {
+    background-position: 1000px;
+  }
+}
+
+@keyframes ctaAnim {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1845deg);
+  }
+}
+
+@keyframes flo {
+  0%,
+  100% {
+    -webkit-transform: translate(-1rem, -1rem);
+    transform: translate(-1rem, -1rem);
+  }
+
+  20% {
+    -webkit-transform: translate(1rem, -1rem);
+    transform: translate(1rem, -1rem);
+  }
+
+  40% {
+    -webkit-transform: translate(-1rem, 1rem);
+    transform: translate(-1rem, 1rem);
+  }
+
+  60% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+
+  80% {
+    -webkit-transform: translate(1rem, 1rem);
+    transform: translate(1rem, 1rem);
+  }
+}
+
+@keyframes coinGreen {
+  0% {
+    transform: translate(12rem, 9rem);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes coinGreenBlur {
+  0% {
+    transform: translate(-45rem, -1rem);
+  }
+
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+
+@keyframes coinGold {
+  0% {
+    transform: translate(-7rem, 7rem);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes coinGoldBlur {
+  0% {
+    transform: translate(24rem, -36rem);
+  }
+
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+
+
+@keyframes stoneViolet {
+  0% {
+    transform: translate(19rem, -8rem);
+  }
+
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+
+@keyframes glowAnim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stoneRuby {
+  0% {
+    transform: translate(-16rem, -31rem);
+  }
+
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+
+/**** responsive ****/
+
+@media (max-width:1000px) {
+
+  @keyframes coinGreen {
+    0% {
+      transform: translate(37rem, 144rem);
+    }
+
+    100% {
+      transform: translate(0rem, 0rem);
+    }
+  }
+
+  @keyframes coinGreenBlur {
+    0% {
+      transform: translate(-43rem, 24rem);
+    }
+
+    100% {
+      transform: translate(0rem, 0rem);
+    }
+  }
+
+  @keyframes coinGoldBlur {
+    0% {
+      transform: translate(41rem, -126rem);
+    }
+
+    100% {
+      transform: translate(0rem, 0rem);
+    }
+  }
+
+  @keyframes coinGold {
+    0% {
+      transform: translate(-35rem, 152rem);
+    }
+
+    100% {
+      transform: translate(0rem, 0rem);
+    }
+  }
+
+  @keyframes stoneViolet {
+    0% {
+      transform: translate(23rem, 24rem);
+    }
+
+    100% {
+      transform: translate(0rem, 0rem);
+    }
+  }
+
+  @keyframes stoneRuby {
+    0% {
+      transform: translate(-22rem, -25rem);
+    }
+
+    100% {
+      transform: translate(0rem, 0rem);
+    }
+  }
+}

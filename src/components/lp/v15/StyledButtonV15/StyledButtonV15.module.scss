@@ -1,0 +1,115 @@
+.exclusiveSectionButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.goldButton {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    // letter-spacing: 2px;
+    overflow: hidden;
+    color: #2C2C2C;
+    /* Dark grey text instead of white */
+
+    /* Sleek golden gradient matching the image */
+    background: linear-gradient(145deg,
+            #FEDB5F 0%,
+            #FDCF3A 30%,
+            #FDBB21 70%,
+            #FCA510 100%);
+
+    // box-shadow:
+    //     0 4px 0 #B47D1F,
+    //     /* Darker gold shadow for 3D effect */
+    //     0 10px 20px rgba(0, 0, 0, 0.2),
+    //     0 0 30px rgba(253, 203, 58, 0.4);
+
+    // transform: perspective(500px) rotateX(4deg);
+    // transition: all 0.3s ease;
+
+    /* Subtle border for definition */
+    border: 1px solid rgba(255, 245, 150, 0.5);
+}
+
+/* Remove the fire layer completely */
+.goldenGlow {
+    position: absolute;
+    inset: -10%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 245, 150, 0.8), transparent 70%);
+    animation: glowPulse 2.5s infinite ease-in-out;
+    z-index: 0;
+    opacity: 0.4;
+    filter: blur(15px);
+}
+
+.buttonText {
+    position: relative;
+    z-index: 2;
+    text-shadow:
+        0 2px 0 #B47D1F,
+        0 4px 10px rgba(255, 215, 0, 0.3);
+    // letter-spacing: 3px;
+}
+
+/* Hover effect - more subtle */
+.goldButton:hover {
+    transform: perspective(500px) rotateX(0deg) scale(1.03);
+    background: linear-gradient(145deg,
+            #FFE57F 0%,
+            #FED853 30%,
+            #FEC734 70%,
+            #FDB428 100%);
+    box-shadow:
+        0 6px 0 #B47D1F,
+        0 15px 30px rgba(0, 0, 0, 0.25),
+        0 0 40px rgba(253, 203, 58, 0.6);
+}
+
+/* Click effect */
+.goldButton:active {
+    transform: translateY(4px) perspective(500px) rotateX(0deg);
+    box-shadow:
+        0 2px 0 #B47D1F,
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+    .goldButton {
+        font-size: 28px;
+        padding: 10px 20px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .goldButton {
+        font-size: 24px;
+        padding: 0.8rem 2.5rem;
+    }
+}

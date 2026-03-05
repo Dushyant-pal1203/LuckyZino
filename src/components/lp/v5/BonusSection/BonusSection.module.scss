@@ -1,0 +1,68 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+.bonusSectionComponent {
+  position: relative;
+  background: transparent;
+  max-width: $maxWidthSmallContainer;
+  padding: 0 20px 32px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  @media (min-width: $breakpoint_992) {
+    padding: 0 20px 48px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+.bonusContentTop,
+.bonusContentBottom {
+  width: 84%;
+  position: relative;
+  aspect-ratio: 374 / 156;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  @media (min-width: $breakpoint_992) {
+    width: 40%;
+    margin: 0 8px;
+  }
+
+  &:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
+}
+
+.hourlyBonusIcon {
+  display: block;
+  object-fit: fill;
+  max-width: initial;
+  width: 114%;
+  height: 126%;
+  position: absolute;
+  top: -26%;
+  left: 0;
+}
+
+.dailyBonusIcon {
+  display: block;
+  object-fit: fill;
+  max-width: initial;
+  width: 104%;
+  height: 126%;
+  position: absolute;
+  top: -13%;
+  right: 0;
+}

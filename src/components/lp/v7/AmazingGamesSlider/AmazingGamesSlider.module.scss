@@ -1,0 +1,93 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+@use '../../../../styles/abstract/variables' as *;
+
+.amazingGamesSliderComponent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 0 48px;
+
+  @media (min-width: $breakpoint_992) {
+    padding: 0 0 48px;
+  }
+}
+
+.amazingGamesSliderContainer {
+  width: 100%;
+  height: 100%;
+  padding: 26px 0;
+
+  @media (min-width: $breakpoint_480) {
+    padding: 28px 0;
+  }
+
+  @media (min-width: $breakpoint_576) {
+    padding: 32px 0;
+  }
+}
+
+.amazingGamesTitle {
+  display: none;
+  max-width: 540px;
+  justify-content: center;
+  position: relative;
+  padding: 0 20px;
+
+  @media (min-width: 432px) {
+    display: flex;
+  }
+}
+
+.amazingGamesTitleMobile {
+  display: flex;
+  max-width: 440px;
+  justify-content: center;
+  position: relative;
+  padding: 0 20px;
+
+  @media (min-width: 432px) {
+    display: none;
+  }
+}
+
+.amazingGamesSliderSlide {
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.amazingGamesSliderSlideRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  @media (min-width: $breakpoint_480) {
+    gap: 10px;
+  }
+
+  @media (min-width: $breakpoint_576) {
+    gap: 20px;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    gap: 22px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    gap: 32px;
+  }
+}
+
+.amazingGamesButtonContainer {
+  margin-top: 18px;
+}

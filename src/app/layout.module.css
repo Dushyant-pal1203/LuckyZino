@@ -1,0 +1,21 @@
+.layout {
+  background-image: url('/images/bg.jpg');
+  background-image: image-set(
+    url('/images/bg.webp') type('image/webp'),
+    url('/images/bg.jpg') type('image/jpeg')
+  );
+  background-image: -webkit-image-set(
+    url('/images/bg.webp') type('image/webp'),
+    url('/images/bg.jpg') type('image/jpeg')
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-origin: content-box;
+  width: 100%; /* Full width */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}

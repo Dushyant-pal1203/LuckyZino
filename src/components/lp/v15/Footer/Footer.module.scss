@@ -1,0 +1,118 @@
+.footerBackground {
+    border-top: 1px solid #cf8c1fcb;
+    background: linear-gradient(180deg,
+            #3a3a3a 0%,
+            #1e1e1e 40%,
+            #0f0f0f 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 215, 120, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.8),
+        0 -4px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 60px; // This creates space for the fixed footer stick
+}
+
+.footer_stick {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; // Fixed height for the stick footer
+    z-index: 99;
+    background-image: url('/images/lp_v15/desktop/bottom_bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_stick_content {
+    width: 100%;
+    max-width: 1200px; // Adjust based on your design
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.footer_stick_text_desktop {
+    height: auto;
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.footer_stick_text_mobile {
+    height: auto;
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: none;
+}
+
+.footer_stick_button {
+    height: auto;
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Mobile responsive adjustments
+@media (max-width: 768px) {
+    .footer_stick_text_desktop {
+        display: none;
+    }
+
+    .footer_stick_text_mobile {
+        display: block;
+    }
+
+    .footerBackground {
+        margin-bottom: 50px;
+    }
+
+    .footer_stick {
+        height: 50px;
+    }
+
+    .footer_stick_content {
+        padding: 0 20px;
+    }
+
+    .footer_stick_text {
+        max-height: 30px;
+    }
+
+    .footer_stick_button {
+        max-height: 35px;
+    }
+}
+
+// Small mobile adjustments
+@media (max-width: 480px) {
+    .footer_stick {
+        height: 45px;
+    }
+
+    .footer_stick_content {
+        padding: 0 30px;
+    }
+
+    .footer_stick_text {
+        max-height: 25px;
+    }
+
+    .footer_stick_button {
+        max-height: 30px;
+    }
+}

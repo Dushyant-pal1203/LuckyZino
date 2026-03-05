@@ -1,0 +1,78 @@
+@use '../../../../styles/abstract/variables' as *;
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.headerComponent {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid rgba(105, 41, 216, 0.80);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, #241056 0%, #241056 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.72) 100%), linear-gradient(180deg, #D6D6D6 0%, #838383 78.5%, #737373 100%);
+  background-blend-mode: soft-light, normal, multiply, normal, normal;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 16px 16px 0 rgba(245, 100, 118, 0.10) inset;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: $maxWidthSmallContainer;
+  margin: 0 auto;
+  padding: 4px 20px 8px;
+
+  @media (min-width: $breakpoint_992) {
+    padding: 4px 20px 6px;
+  }
+}
+
+.headerLogoContainer {
+  display: inline-block;
+  max-width: 180px;
+  position: relative;
+  top: 4px;
+
+  @media (min-width: $breakpoint_576) {
+    max-width: 220px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    max-width: 260px;
+  }
+}
+
+.headerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 16px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  margin-top: 4px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.20);
+  font-family: "Exo 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: 0.8px;
+  border: none;
+  outline: none;
+  background-image: url('/images/lp_v7/LogInButton.avif'), url('/images/lp_v7/LogInButton.png');
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 104px;
+  min-width: 104px;
+  height: 44px;
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
+}

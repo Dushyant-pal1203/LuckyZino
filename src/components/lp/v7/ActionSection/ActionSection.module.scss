@@ -1,0 +1,32 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.actionSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: calc(100% + 20px);
+  left: -10px;
+  bottom: -2px;
+  padding: 10px 20px;
+  z-index: 2;
+  border: 1px solid rgba(105, 41, 216, 0.50);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, #241056 0%, #241056 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.72) 100%), linear-gradient(180deg, #D6D6D6 0%, #838383 78.5%, #737373 100%);
+  background-blend-mode: soft-light, normal, multiply, normal, normal;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 16px 16px 0 rgba(245, 100, 118, 0.10) inset;
+
+  @media (min-width: $breakpoint_768) {
+    display: none;
+  }
+}
+
+.actionSectionText {
+  color: #FFF;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.20);
+  font-family: "Exo 2";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 0.64px;
+}

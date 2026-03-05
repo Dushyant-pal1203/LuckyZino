@@ -1,0 +1,81 @@
+@use '../../../../styles/abstract/variables' as *;
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.footerComponent {
+  position: relative;
+  padding: 30px 20px;
+  background-image: url(../../../../../public/images/mainPage/footerBG.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -16px;
+  z-index: 3;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 30px 40px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    padding: 60px 80px;
+  }
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  color: $light;
+
+  @media (min-width: $breakpoint_992) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logoSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $breakpoint_992) {
+    max-width: 30%;
+  }
+}
+
+.footerLogoContainer {
+  display: inline-block;
+  max-width: 280px;
+  padding: 0 24px;
+
+  @media (min-width: $breakpoint_992) {
+    max-width: 348px;
+  }
+}
+
+.footerCopy {
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+
+  @media (min-width: $breakpoint_992) {
+    font-size: 20px;
+  }
+}
+
+.footerText {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+
+  @media (min-width: $breakpoint_992) {
+    max-width: 60%;
+    font-size: 20px;
+  }
+}

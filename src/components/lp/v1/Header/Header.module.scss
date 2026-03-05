@@ -1,0 +1,74 @@
+@use '../../../../styles/abstract/variables' as *;
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.headerComponent {
+  background-image: url(../../../../../public/images/mainPage/headerBG.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8px 20px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: -24px;
+
+  @media (min-width: $breakpoint_576) {
+    padding: 8px 40px 24px;
+  }
+  @media (min-width: $breakpoint_992) {
+    padding: 8px 80px 24px;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+}
+
+.headerLogoContainer {
+  display: inline-block;
+  max-width: 180px;
+  position: relative;
+  top: 4px;
+
+  @media (min-width: $breakpoint_576) {
+    max-width: 220px;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    max-width: 260px;
+  }
+}
+
+.headerLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  @media (min-width: $breakpoint_992) {
+    gap: 16px;
+  }
+}
+
+.headerLinkLogo {
+  width: 70px;
+}
+
+.headerLinkText {
+  font-size: 22px;
+  font-weight: 400;
+  white-space: nowrap;
+  position: relative;
+  bottom: 1.5px;
+	color: white;
+
+  @media (min-width: $breakpoint_992) {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,29 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.divider {
+  position: relative;
+  min-height: 8vh;
+  margin-top: -16px;
+  margin-bottom: -28px;
+  background-image: url(../../../../../public/images/mainPage/divider.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+
+  @media (min-width: $breakpoint_576) {
+    min-height: 7vh;
+  }
+
+  @media (min-width: $breakpoint_768) {
+    min-height: 7vh;
+  }
+
+  @media (min-width: $breakpoint_992) {
+    min-height: 8vh;
+  }
+
+  @media (min-width: $breakpoint_1200) {
+    min-height: 9vh;
+  }
+}

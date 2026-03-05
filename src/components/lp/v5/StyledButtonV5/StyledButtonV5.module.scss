@@ -1,0 +1,41 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.styledButtonV5 {
+  position: relative;
+  width: auto;
+  min-width: 135px;
+  min-height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
+
+  &.mainSectionButtonDesktop {
+    display: none;
+
+    @media (min-width: $breakpoint_992) {
+      display: inline-flex;
+    }
+  }
+  
+  &.mainSectionButtonMobile {
+    display: inline-flex;
+
+    @media (min-width: $breakpoint_992) {
+      display: none;
+    }
+  }
+}

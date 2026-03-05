@@ -1,0 +1,12 @@
+@use '../../../../styles/abstract/breakpoints' as *;
+
+.dividerV10 {
+  position: relative;
+  width: calc(100% + 20px);
+  left: -10px;
+  height: 4px;
+  z-index: 2;
+  border: 0.5px solid rgba(255, 255, 255, 0.75);
+  background: #FF5100;
+  box-shadow: 0 0 2.2px 0 #FFF, 0 0 5.3px 0 #FF8A02;
+}
