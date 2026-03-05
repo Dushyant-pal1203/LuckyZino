@@ -110,8 +110,8 @@
 
 
 .slider_button {
-  height: auto;
-  width: 100%;
+  // height: auto;
+  // width: 100%;
   object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -136,7 +136,7 @@
     object-fit: cover;
   }
 
-  .slider_button {
-    max-height: 35px;
-  }
+  // .slider_button {
+  //   max-height: 35px;
+  // }
 }

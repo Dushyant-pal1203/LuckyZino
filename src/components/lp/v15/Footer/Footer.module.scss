@@ -1,14 +1,12 @@
 .footerBackground {
-    border-top: 1px solid #cf8c1fcb;
-    background: linear-gradient(180deg,
-            #3a3a3a 0%,
-            #1e1e1e 40%,
-            #0f0f0f 100%);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 215, 120, 0.6),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.8),
-        0 -4px 8px rgba(0, 0, 0, 0.4);
-    margin-bottom: 60px; // This creates space for the fixed footer stick
+    inset: 0;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 60px;
+    background-image: url('/images/lp_v15/desktop/footerBackground.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .footer_stick {
@@ -19,9 +17,9 @@
     height: 60px; // Fixed height for the stick footer
     z-index: 99;
     background-image: url('/images/lp_v15/desktop/bottom_bg2.png');
-    background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +76,7 @@
     }
 
     .footerBackground {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .footer_stick {
