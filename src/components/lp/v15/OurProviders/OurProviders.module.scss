@@ -114,42 +114,16 @@
 
 .providerSlide {
     display: flex;
-    // justify-content: center;
     gap: 10px;
     align-items: center;
-    // height: auto;
-
-    @media (min-width: $breakpoint_576) {
-        // max-width: 200px;
-    }
 }
 
 .providerCard {
-    // background: rgba(33, 32, 30, 0.9);
-    // border: 2px solid #c9a84c;
-    // border-radius: 16px;
-    // padding: 0px 1px;
     width: 100%;
-    // height: 120px;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // text-align: center;
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     margin-bottom: 10px;
-
-    // &:hover {
-    //   transform: translateY(-5px);
-    //   box-shadow: 0 15px 30px rgba(201, 168, 76, 0.3);
-    //   border-color: #ffd700;
-    // }
-
-    @media (min-width: $breakpoint_768) {
-        // height: 140px;
-        // padding: 25px 20px;
-    }
 }
 
 .providerName {
@@ -298,6 +272,29 @@
         padding: 0;
         margin: 0;
         background: transparent !important;
+        width: 110%;
+        margin-top: 10px;
+    }
+
+    .ourProvidersContainer {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none !important;
+        padding: 0;
+    }
+
+    .providerCard {
+        width: 100%;
+    }
+
+    .providerCard img {
+        width: 100%;
+    }
+
+    .providerSlide {
+        gap: 0 !important;
+        width: 50% !important;
     }
 
 }
