@@ -4,4 +4,15 @@
     width: 100%;
     height: 100%;
     background: black;
+
+    // This will hide elements on mobile devices
+    @media (max-width: 768px) {
+
+        :global(.hideOnMobile),
+        // If it's a global class
+        .hideOnMobile,
+        [class*="hideOnMobile"] {
+            display: none !important;
+        }
+    }
 }

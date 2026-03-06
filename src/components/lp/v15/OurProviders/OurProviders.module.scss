@@ -13,6 +13,11 @@
     padding: 40px 0;
     overflow: hidden;
 
+    @media (min-width: $breakpoint_768) {
+        margin-bottom: 50px;
+        background: transparent !important;
+    }
+
     @media (min-width: $breakpoint_992) {
         // padding: 60px 0;
     }
@@ -29,7 +34,7 @@
     }
 
     &.ourProvidersDark {
-        background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+        background: transparent !important;
     }
 }
 
@@ -286,4 +291,13 @@
     100% {
         transform: translateX(-50%);
     }
+}
+
+@media (max-width: 768px) {
+    .ourProvidersComponent {
+        padding: 0;
+        margin: 0;
+        background: transparent !important;
+    }
+
 }

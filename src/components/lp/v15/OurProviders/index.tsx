@@ -11,7 +11,7 @@ export const OurProviders = ({
 }) => {
   return (
     <section
-      className={`${styles.ourProvidersComponent} ${customClassName ? styles[customClassName] : ''}`}
+      className={`${styles.ourProvidersComponent} ${customClassName || ''}`}
     >
       <div className={styles.ourProvidersTitle}>
         <div className={styles.testimonialsSliderTitle}>
