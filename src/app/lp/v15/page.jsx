@@ -80,7 +80,7 @@ const Page = () => { // Capitalized component name (convention)
                 <ExclusiveSection />
                 <PlayAndWinSection />
                 <OurExclusivesSlider />
-                <OurProviders customClassName="ourProvidersDark hideOnMobile" />
+                <OurProviders customClassName=" hideOnMobile" />
                 <MassivePayoutSection />
                 <TestimonialsSlider customClassName="testimonialsSliderV9" />
                 <Footer />

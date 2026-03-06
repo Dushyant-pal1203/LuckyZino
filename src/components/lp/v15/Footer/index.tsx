@@ -42,6 +42,7 @@ export const Footer = () => {
       >
         <div className="md:flex md:justify-between mx-auto py-[16px] px-[24px] max-w-[1120px] gap-[24px]">
           {/* Desktop Layout */}
+
           {/* Left Side - Logo */}
           <div className="hidden md:flex md:flex-col md:justify-center flex-shrink-0">
             <div className="flex justify-center items-center mb-4">
@@ -57,10 +58,18 @@ export const Footer = () => {
           </div>
           <div className="hidden md:flex md:flex-col">
             <div className="hidden md:flex md:justify-between md:items-start">
-              {/* Middle - Navigation Links */}
-              <div className="flex space-x-16">
+              {/* About Us and Contact Us */}
+              <div className="flex flex-col space-y-3 gap-1">
+                <div className="flex flex-col gap-1">
+                  <div className="hover:text-purple-200 transition-colors cursor-pointer">
+                    About Us
+                  </div>
+                  <div className="hover:text-purple-200 transition-colors cursor-pointer">
+                    Contact Us
+                  </div>
+                </div>
                 <div className="relative flex flex-col space-y-3 z-10">
-                  <div className="flex space-x-3 mt-2">
+                  <div className="flex gap-2 mt-2">
                     <Link
                       href="https://www.facebook.com/profile.php?id=61574664105322"
                       target="_blank"
@@ -81,7 +90,9 @@ export const Footer = () => {
                     </Link>
                   </div>
                 </div>
-
+              </div>
+              {/* Middle - Navigation Links */}
+              <div className="flex space-x-16">
                 <div className="relative flex flex-col space-y-3 z-10">
                   <div
                     onClick={() => setModalPage('terms')}
@@ -142,63 +153,6 @@ export const Footer = () => {
 
           {/* Mobile Layout */}
           <div className="md:hidden">
-            {/* Navigation Links */}
-            <div className="grid grid-cols-2 gap-y-4 gap-x-8 mb-6 text-[16px]">
-              <div
-                onClick={() => setModalPage('terms')}
-                className="hover:text-purple-200 transition-colors cursor-pointer"
-              >
-                Terms and Conditions &nbsp;
-              </div>
-              <div
-                onClick={() => setModalPage('rules')}
-                className="hover:text-purple-200 transition-colors cursor-pointer"
-              >
-                Sweepstakes Rules
-              </div>
-              <div className="flex space-x-3">
-                <Link
-                  href="https://www.facebook.com/profile.php?id=61574664105322"
-                  target="_blank"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <div className="w-8 h-8 min-w-[36px] min-h-[36px] flex items-center justify-center">
-                    <img src="/images/fb.png" alt="fb logo" />
-                  </div>
-                </Link>
-                <Link
-                  href="https://www.instagram.com/lucky_zino_official/"
-                  className="hover:opacity-80 transition-opacity"
-                  target="_blank"
-                >
-                  <div className="w-8 h-8 min-w-[36px] min-h-[36px] flex items-center justify-center">
-                    <img src="/images/inst.png" alt="instagram logo" />
-                  </div>
-                </Link>
-              </div>
-              <div
-                onClick={() => setModalPage('privacy')}
-                className="hover:text-purple-200 transition-colors cursor-pointer"
-              >
-                Privacy Policy
-              </div>
-            </div>
-
-            <div className="space-y-3 mb-6 text-[16px]">
-              <div
-                onClick={() => setModalPage('responsible')}
-                className="block hover:text-purple-200 transition-colors cursor-pointer"
-              >
-                Responsible Social Gameplay
-              </div>
-              <div
-                onClick={() => setModalPage('cookie')}
-                className="block hover:text-purple-200 transition-colors cursor-pointer"
-              >
-                Cookie Policy
-              </div>
-            </div>
-
             {/* Logo */}
             <div className="text-center mb-6">
               <div className="flex items-center justify-center mb-3">
@@ -212,7 +166,79 @@ export const Footer = () => {
                 &copy; {currentYear} Silver Rhino LTD. All rights reserved.
               </p>
             </div>
-            <div className="pt-6 text-[14px] opacity-90">
+            <div className="flex gap-2 justify-between text-sm flex-wrap">
+              <div className="flex-1">
+                {/* About Us and Contact Us */}
+                <div className="flex flex-col gap-1">
+                  <div className="hover:text-purple-200 transition-colors cursor-pointer">
+                    About Us
+                  </div>
+                  <div className="hover:text-purple-200 transition-colors cursor-pointer">
+                    Contact Us
+                  </div>
+                </div>
+                {/* Social Icons */}
+                <div className="flex gap-1 mt-2 mb-2">
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=61574664105322"
+                    target="_blank"
+                    className="hover:opacity-80 transition-opacity"
+                  >
+                    <div className="w-6 h-6 min-w-[36px] min-h-[36px] flex items-center justify-center">
+                      <img src="/images/fb.png" alt="fb logo" />
+                    </div>
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/lucky_zino_official/"
+                    className="hover:opacity-80 transition-opacity"
+                    target="_blank"
+                  >
+                    <div className="w-6 h-6 min-w-[36px] min-h-[36px] flex items-center justify-center">
+                      <img src="/images/inst.png" alt="instagram logo" />
+                    </div>
+                  </Link>
+                </div>
+              </div>
+              {/* Navigation Links */}
+              <div className="flex-1 grid grid-cols-1 mb-6">
+                <div
+                  onClick={() => setModalPage('terms')}
+                  className="hover:text-purple-200 transition-colors cursor-pointer"
+                >
+                  Terms and Conditions &nbsp;
+                </div>
+                <div
+                  onClick={() => setModalPage('rules')}
+                  className="hover:text-purple-200 transition-colors cursor-pointer"
+                >
+                  Sweepstakes Rules
+                </div>
+
+                <div
+                  onClick={() => setModalPage('privacy')}
+                  className="hover:text-purple-200 transition-colors cursor-pointer"
+                >
+                  Privacy Policy
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <div
+                  onClick={() => setModalPage('responsible')}
+                  className="block hover:text-purple-200 transition-colors cursor-pointer"
+                >
+                  Responsible Social Gameplay
+                </div>
+                <div
+                  onClick={() => setModalPage('cookie')}
+                  className="block hover:text-purple-200 transition-colors cursor-pointer"
+                >
+                  Cookie Policy
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-6 text-[14px] opacity-90 text-center">
               <div>
                 <p>
                   Luckyzino is operated by Silver Rhino LTD, reg. number HE
@@ -229,26 +255,6 @@ export const Footer = () => {
                   Sweepstakes Rules.
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Bottom Text - Common for both layouts */}
-          <div className="hidden justify-end pt-6 text-sm opacity-90">
-            <div>
-              <p>
-                Luckyzino is operated by Silver Rhino LTD, reg. number HE
-                470054, address - 2 Poreias, Limassol, 3011 Cyprus.
-              </p>
-              <p className="mb-2">
-                For assistance, contact us at support@luckyzino.com.
-              </p>
-              <p>
-                <strong>NO PURCHASE NECESSARY.</strong> Void where prohibited by
-                law. 18+.
-                <br />
-                For detailed information, see our Terms and Conditions and
-                Sweepstakes Rules.
-              </p>
             </div>
           </div>
         </div>
