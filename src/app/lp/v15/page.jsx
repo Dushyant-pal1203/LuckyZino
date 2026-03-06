@@ -9,7 +9,7 @@ import PlayAndWinSection from '@/components/lp/v15/PlayAndWinSection';
 import { OurProviders } from '@/components/lp/v15/OurProviders';
 import HelpshiftStyles from '@/components/ui/helpshift-styles';
 import styles from '@/styles/pages/pageV15.module.scss';
-import { TestimonialsSlider } from '@/components//lp/v15/TestimonialsSlider';
+import { TestimonialsSlider } from '@/components/lp/v15/TestimonialsSlider'; // Fixed import path
 
 // Import Swiper styles
 import 'swiper/css';
@@ -43,7 +43,7 @@ import 'swiper/css/navigation';
 //   }
 // };
 
-const page = () => {
+const Page = () => { // Capitalized component name (convention)
     return (
         <>
             <Script
@@ -80,7 +80,7 @@ const page = () => {
                 <ExclusiveSection />
                 <PlayAndWinSection />
                 <OurExclusivesSlider />
-                <OurProviders customClassName="ourProvidersDark" />
+                <OurProviders customClassName="ourProvidersDark hideOnMobile" />
                 <MassivePayoutSection />
                 <TestimonialsSlider customClassName="testimonialsSliderV9" />
                 <Footer />
@@ -90,4 +90,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page; // Capitalized export

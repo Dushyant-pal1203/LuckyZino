@@ -2,8 +2,8 @@
 
 import styles from './MassivePayoutSection.module.scss';
 import Image from 'next/image';
-
 import { useRouter } from 'next/navigation';
+import { OurProviders } from '../OurProviders';
 
 export const MassivePayoutSection = () => {
   const router = useRouter();
@@ -44,7 +44,8 @@ export const MassivePayoutSection = () => {
           />
         </div>
         <div className={styles.ContentMobile}>
-          <Image
+          <OurProviders customClassName="ourProvidersDark" />
+          {/* <Image
             src="/images/lp_v15/mobile/massivepayload_text.png"
             alt="Massive Payout Text"
             width={800}
@@ -53,7 +54,7 @@ export const MassivePayoutSection = () => {
             onClick={() => router.replace('/sign-up')}
             style={{ cursor: 'pointer' }}
             priority
-          />
+          /> */}
           <Image
             src="/images/lp_v15/mobile/massivepayload_button.png"
             alt="Massive Payout Text"
