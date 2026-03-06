@@ -13,7 +13,7 @@
         z-index: 1;
 
         .backgroundImage {
-            object-fit: cover;
+            object-fit: fill;
             object-position: center;
         }
     }
@@ -92,7 +92,7 @@
         .contentWrapper {
             justify-content: center;
             align-items: flex-end;
-            padding: 0 5% 5% 5%;
+            padding: 0;
 
             .leftContentDesktop {
                 display: none;
