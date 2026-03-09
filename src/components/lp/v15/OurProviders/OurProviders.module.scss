@@ -298,3 +298,22 @@
     }
 
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .ourProvidersComponent {
+        padding: 0;
+        margin: 0;
+    }
+
+    .ourProvidersContainer {
+        background-color: transparent;
+        border: none;
+        padding: 5px 0 0;
+    }
+
+    .ourProvidersTitle {
+        margin-bottom: 20px;
+    }
+
+}

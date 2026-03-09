@@ -15,4 +15,14 @@
             display: none !important;
         }
     }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+        :global(.hideOnMobile),
+        // If it's a global class
+        .hideOnMobile,
+        [class*="hideOnMobile"] {
+            display: none !important;
+        }
+    }
 }

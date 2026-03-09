@@ -174,7 +174,7 @@ export const ExclusiveSection = () => {
                     navigation={true}
                     modules={[Navigation]}
                     style={{
-                        "--swiper-navigation-color": "#fff",
+                        "--swiper-navigation-color": "#fff", "--swiper-navigation-size": "25px"
                     }}
                     className={styles.exclusiveSectionSlider}
                 >
@@ -302,14 +302,14 @@ export const ExclusiveSection = () => {
                     </SwiperSlide>
                 </Swiper>
 
-                <div className={styles.exclusiveSectionButtonContainer}>
+                {/* <div className={styles.exclusiveSectionButtonContainer}>
                     <img
                         src="/images/lp_v15/desktop/choose_your_bonus_button.png"
                         alt="choose your bonus"
                         style={{ cursor: 'pointer' }}
                         onClick={() => router.replace('/sign-up')}
                     />
-                </div>
+                </div> */}
             </div>
         </section>
     );
