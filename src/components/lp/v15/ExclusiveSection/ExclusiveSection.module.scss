@@ -31,7 +31,7 @@
     max-width: 650px;
     justify-content: center;
     position: relative;
-    margin-top: 40px;
+    // margin-top: 40px;
     margin-bottom: 10px;
 
     @media (min-width: $breakpoint_768) {
@@ -58,7 +58,7 @@
     align-items: center;
     justify-content: center;
     max-width: $maxWidthContainer;
-    padding: 20px 0;
+    // padding: 20px 0;
     margin: 0 auto;
 
     @media (min-width: $breakpoint_576) {

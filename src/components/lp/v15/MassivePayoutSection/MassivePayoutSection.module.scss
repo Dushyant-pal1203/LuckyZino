@@ -117,11 +117,24 @@
 
     // Tablet adjustments if needed
     @media (min-width: 769px) and (max-width: 1024px) {
+        .backgroundWrapperDesktop {
+            display: none;
+        }
+
+        .backgroundWrapperMobile {
+            display: block;
+        }
+
         .contentWrapper {
-            padding: 0 5%;
+            padding: 0;
 
             .leftContentDesktop {
                 max-width: 600px;
+            }
+
+            .ContentMobile {
+                display: flex;
+                gap: 45rem;
             }
         }
     }
