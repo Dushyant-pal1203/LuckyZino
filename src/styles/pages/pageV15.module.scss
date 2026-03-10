@@ -22,7 +22,7 @@
         // If it's a global class
         .hideOnMobile,
         [class*="hideOnMobile"] {
-            display: none !important;
+            display: flex !important;
         }
     }
 }

@@ -17,7 +17,7 @@ export const HeroSection = () => {
           draggable="false"
         />
 
-        {/* Mobile Background (use mobile image if different) */}
+        {/* Mobile Background */}
         <img
           className={styles.backgroundImageMobile}
           src="/images/lp_v15/mobile/background.png"
@@ -28,11 +28,21 @@ export const HeroSection = () => {
 
       <div className={styles.heroContent}>
         <div className={styles.textBlock}>
+          {/* Desktop Hero Text */}
           <img
-            className={styles.textImage}
+            className={styles.textImageDesktop}
             onClick={() => router.replace('/sign-up')}
             src="/images/lp_v15/desktop/hero_text.png"
-            alt="Hero Text"
+            alt="Hero Text Desktop"
+            draggable="false"
+          />
+
+          {/* Mobile Hero Text */}
+          <img
+            className={styles.textImageMobile}
+            onClick={() => router.replace('/sign-up')}
+            src="/images/lp_v15/mobile/hero_text.png"
+            alt="Hero Text Mobile"
             draggable="false"
           />
         </div>

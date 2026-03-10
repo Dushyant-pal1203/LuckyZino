@@ -9,7 +9,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         z-index: 1;
 
         .backgroundImage {
@@ -61,10 +61,11 @@
 
         .ContentMobile {
             display: none;
-            width: 110%;
+            width: 100%;
             flex-direction: column;
             align-items: center;
-            gap: 20rem;
+            height: 80vh;
+            justify-content: space-between;
 
             .textImage {
                 width: 80%;
@@ -125,17 +126,8 @@
             display: block;
         }
 
-        .contentWrapper {
-            padding: 0;
-
-            .leftContentDesktop {
-                max-width: 600px;
-            }
-
-            .ContentMobile {
-                display: flex;
-                gap: 45rem;
-            }
+        .ContentMobile {
+            height: 80vh !important;
         }
     }
 }
