@@ -62,8 +62,8 @@ export const ExclusiveSection = () => {
                                         </div>
                                     ) : (
                                         <div className={`${styles.coinsFreeText} ${ExoBlackFont.className}`}>
-                                            <span className={styles.coinsFreeTextShadow}>+ FREE 20 SC</span>
-                                            <span className={styles.coinsFreeTextGradient}>+ FREE 20 SC</span>
+                                            <span className={styles.coinsFreeTextShadow}>+ FREE 25 SC</span>
+                                            <span className={styles.coinsFreeTextGradient}>+ FREE 25 SC</span>
                                         </div>
                                     )}
                                 </div>
@@ -75,19 +75,19 @@ export const ExclusiveSection = () => {
                                 </div>
                             ) : (
                                 <div className={`${styles.coinsTotal} ${ExoBlackFont.className}`}>
-                                    <span className={styles.coinsTotalTextShadow}>800,000,000 GC</span>
-                                    <span className={styles.coinsTotalTextGradient}>800,000,000 GC</span>
+                                    <span className={styles.coinsTotalTextShadow}>25,000 GC</span>
+                                    <span className={styles.coinsTotalTextGradient}>25,000 GC</span>
                                 </div>
                             )}
                             <div className={`${styles.coinsDiscount} ${ExoBlackFont.className}`}>
-                                <span className={styles.coinsDiscountValue}>50%</span>
+                                <span className={styles.coinsDiscountValue}>+150%</span>
                                 <span className={styles.coinsDiscountGet}>get discount</span>
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '8px' }}>
                                         <img
-                                            src='/images/lp_v7/ExclusiveSectionCard/999.png'
+                                            src='/images/lp_v15/desktop/discount.png'
                                             alt='icon'
                                             draggable='false'
                                         />
@@ -121,8 +121,8 @@ export const ExclusiveSection = () => {
                                         </div>
                                     ) : (
                                         <div className={`${styles.coinsFreeText} ${ExoBlackFont.className}`}>
-                                            <span className={styles.coinsFreeTextShadow}>+ FREE 5 SC</span>
-                                            <span className={styles.coinsFreeTextGradient}>+ FREE 5 SC</span>
+                                            <span className={styles.coinsFreeTextShadow}>+ FREE 150 SC</span>
+                                            <span className={styles.coinsFreeTextGradient}>+ FREE 150 SC</span>
                                         </div>
                                     )}
                                 </div>
@@ -134,23 +134,23 @@ export const ExclusiveSection = () => {
                                 </div>
                             ) : (
                                 <div className={`${styles.coinsTotal} ${ExoBlackFont.className}`}>
-                                    <span className={styles.coinsTotalTextShadow}>11,000,000 GC</span>
-                                    <span className={styles.coinsTotalTextGradient}>11,000,000 GC</span>
+                                    <span className={styles.coinsTotalTextShadow}>150,000 GC</span>
+                                    <span className={styles.coinsTotalTextGradient}>150,000 GC</span>
                                 </div>
                             )}
                             <div className={`${styles.coinsDiscount} ${ExoBlackFont.className}`}>
                                 {isLandingV9 ? (
                                     <span className={styles.coinsDiscountValue}>40%</span>
                                 ) : (
-                                    <span className={styles.coinsDiscountValue}>75%</span>
+                                    <span className={styles.coinsDiscountValue}>+120%</span>
                                 )}
                                 <span className={styles.coinsDiscountGet}>get discount</span>
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '8px' }}>
                                         <img
-                                            src={isLandingV9 ? '/images/lp_v7/ExclusiveSectionCard/499_799.png' : '/images/lp_v7/ExclusiveSectionCard/499.png'}
+                                            src={isLandingV9 ? '/images/lp_v7/ExclusiveSectionCard/499_799.png' : '/images/lp_v15/desktop/discount1.png'}
                                             alt='icon'
                                             draggable='false'
                                         />
@@ -203,8 +203,8 @@ export const ExclusiveSection = () => {
                                         </div>
                                     ) : (
                                         <div className={`${styles.coinsFreeText} ${ExoBlackFont.className}`}>
-                                            <span className={styles.coinsFreeTextShadow}>+ FREE 20 SC</span>
-                                            <span className={styles.coinsFreeTextGradient}>+ FREE 20 SC</span>
+                                            <span className={styles.coinsFreeTextShadow}>+ FREE 25 SC</span>
+                                            <span className={styles.coinsFreeTextGradient}>+ FREE 25 SC</span>
                                         </div>
                                     )}
                                 </div>
@@ -216,19 +216,19 @@ export const ExclusiveSection = () => {
                                 </div>
                             ) : (
                                 <div className={`${styles.coinsTotal} ${ExoBlackFont.className}`}>
-                                    <span className={styles.coinsTotalTextShadow}>800,000,000 GC</span>
-                                    <span className={styles.coinsTotalTextGradient}>800,000,000 GC</span>
+                                    <span className={styles.coinsTotalTextShadow}>25,000 GC</span>
+                                    <span className={styles.coinsTotalTextGradient}>25,000 GC</span>
                                 </div>
                             )}
                             <div className={`${styles.coinsDiscount} ${ExoBlackFont.className}`}>
-                                <span className={styles.coinsDiscountValue}>50%</span>
+                                <span className={styles.coinsDiscountValue}>+150%</span>
                                 <span className={styles.coinsDiscountGet}>get discount</span>
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '5px' }}>
                                         <img
-                                            src='/images/lp_v7/ExclusiveSectionCard/999.png'
+                                            src='/images/lp_v15/desktop/discount.png'
                                             alt='icon'
                                             draggable='false'
                                         />
@@ -262,8 +262,8 @@ export const ExclusiveSection = () => {
                                         </div>
                                     ) : (
                                         <div className={`${styles.coinsFreeText} ${ExoBlackFont.className}`}>
-                                            <span className={styles.coinsFreeTextShadow}>+ FREE 5 SC</span>
-                                            <span className={styles.coinsFreeTextGradient}>+ FREE 5 SC</span>
+                                            <span className={styles.coinsFreeTextShadow}>+ FREE 150 SC</span>
+                                            <span className={styles.coinsFreeTextGradient}>+ FREE 150 SC</span>
                                         </div>
                                     )}
                                 </div>
@@ -275,23 +275,23 @@ export const ExclusiveSection = () => {
                                 </div>
                             ) : (
                                 <div className={`${styles.coinsTotal} ${ExoBlackFont.className}`}>
-                                    <span className={styles.coinsTotalTextShadow}>11,000,000 GC</span>
-                                    <span className={styles.coinsTotalTextGradient}>11,000,000 GC</span>
+                                    <span className={styles.coinsTotalTextShadow}>150,000 GC</span>
+                                    <span className={styles.coinsTotalTextGradient}>150,000 GC</span>
                                 </div>
                             )}
                             <div className={`${styles.coinsDiscount} ${ExoBlackFont.className}`}>
                                 {isLandingV9 ? (
                                     <span className={styles.coinsDiscountValue}>40%</span>
                                 ) : (
-                                    <span className={styles.coinsDiscountValue}>75%</span>
+                                    <span className={styles.coinsDiscountValue}>+120%</span>
                                 )}
                                 <span className={styles.coinsDiscountGet}>get discount</span>
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '5px' }}>
                                         <img
-                                            src={isLandingV9 ? '/images/lp_v7/ExclusiveSectionCard/499_799.png' : '/images/lp_v7/ExclusiveSectionCard/499.png'}
+                                            src={isLandingV9 ? '/images/lp_v7/ExclusiveSectionCard/499_799.png' : '/images/lp_v15/desktop/discount1.png'}
                                             alt='icon'
                                             draggable='false'
                                         />
