@@ -400,3 +400,11 @@
         margin: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .coinsDiscount {
+        width: 95%;
+        height: auto;
+        margin-top: 10px;
+    }
+}
