@@ -277,6 +277,7 @@
 }
 
 .coinsActionButton {
+    position: relative;
     width: 65%;
     display: flex;
     flex-direction: row;
@@ -284,12 +285,32 @@
     justify-content: center;
     gap: 4px;
     cursor: pointer;
-    // background-color: rgba(36, 16, 86, 0.80);
     border-radius: 32px;
-    border: 1.106px solid linear-gradient(180deg, #FFF3CB 0%, #F6BE0A 100%);
-    box-shadow: 0 0 4.425px 2.212px #9F640B;
+    box-shadow: 0 0 7.425px 3.212px #9f640b;
     padding: 4px 18px;
-    margin: 0px 20px 20px;
+    margin: 0 20px 20px;
+    // background: rgba(36, 16, 86, 0.80);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1.2px; // border thickness
+        border-radius: 32px;
+        background: linear-gradient(180deg, #E08533 0%, #FAE072 50%, #9F640B 100%);
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+
+        pointer-events: none;
+    }
 }
 
 .coinsActionValue {
@@ -301,7 +322,7 @@
     width: 85%;
     height: 35%;
     text-align: center;
-    border-radius: 1px;
+    border-radius: 5px;
     padding: 5px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -316,7 +337,7 @@
         position: absolute;
         inset: 0;
         padding: 1px; // border thickness
-        border-radius: 1px;
+        border-radius: 5px;
         background: linear-gradient(180deg, #E08533 0%, #FAE072 50%, #9F640B 100%);
 
         -webkit-mask:
