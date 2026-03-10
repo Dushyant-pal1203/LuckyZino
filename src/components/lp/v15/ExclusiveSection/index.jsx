@@ -85,7 +85,7 @@ export const ExclusiveSection = () => {
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue} style={{ padding: '8px' }}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '8px 0', justifyItems: 'center' }}>
                                         <img
                                             src='/images/lp_v15/desktop/discount.png'
                                             alt='icon'
@@ -148,7 +148,7 @@ export const ExclusiveSection = () => {
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue} style={{ padding: '8px' }}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '8px 0', justifyItems: 'center' }}>
                                         <img
                                             src={isLandingV9 ? '/images/lp_v7/ExclusiveSectionCard/499_799.png' : '/images/lp_v15/desktop/discount1.png'}
                                             alt='icon'
@@ -226,7 +226,7 @@ export const ExclusiveSection = () => {
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue} style={{ padding: '5px' }}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '5px 0', justifyItems: 'center' }}>
                                         <img
                                             src='/images/lp_v15/desktop/discount.png'
                                             alt='icon'
@@ -289,7 +289,7 @@ export const ExclusiveSection = () => {
                             </div>
                             <div className={styles.coinsAction}>
                                 <button className={styles.coinsActionButton}>
-                                    <div className={styles.coinsActionValue} style={{ padding: '5px' }}>
+                                    <div className={styles.coinsActionValue} style={{ padding: '5px 0', justifyItems: 'center' }}>
                                         <img
                                             src={isLandingV9 ? '/images/lp_v7/ExclusiveSectionCard/499_799.png' : '/images/lp_v15/desktop/discount1.png'}
                                             alt='icon'

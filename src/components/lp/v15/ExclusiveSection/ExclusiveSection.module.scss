@@ -277,7 +277,7 @@
 }
 
 .coinsActionButton {
-    width: 100%;
+    width: 65%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -289,30 +289,34 @@
     border: 1.106px solid linear-gradient(180deg, #FFF3CB 0%, #F6BE0A 100%);
     box-shadow: 0 0 4.425px 2.212px #9F640B;
     padding: 4px 18px;
-    margin: 0px 20px 15px;
+    margin: 0px 20px 20px;
 }
 
 .coinsActionValue {
-    width: 80%;
+    width: 100%;
 }
 
 .coinsDiscount {
     position: relative;
-    width: 100%;
+    width: 85%;
+    height: 35%;
     text-align: center;
-    border-radius: 16px;
+    border-radius: 1px;
     padding: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     overflow: hidden;
     background: transparent;
     box-shadow: 0 2.074px 0 0 rgba(0, 0, 0, 0.60);
+    background: url('/images/lp_v15/desktop/discount_background.png');
+    background-size: cover;
+    background-position: center;
 
     &::before {
         content: "";
         position: absolute;
         inset: 0;
         padding: 1px; // border thickness
-        border-radius: 16px;
+        border-radius: 1px;
         background: linear-gradient(180deg, #E08533 0%, #FAE072 50%, #9F640B 100%);
 
         -webkit-mask:
@@ -347,7 +351,7 @@
     position: absolute;
     top: -50%;
     left: 0%;
-    color: #3E00AA;
+    color: #000;
     font-size: 16px;
     font-style: normal;
     font-weight: 800;
