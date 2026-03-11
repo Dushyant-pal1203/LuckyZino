@@ -23,7 +23,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* or any other position like 'top', 'bottom', etc. */
 }
 
 .exclusiveSectionTitle {
@@ -44,7 +43,7 @@
     // max-width: 340px;
     justify-content: center;
     position: relative;
-    margin: 10px 40px;
+    margin: 0px 20px;
 
     @media (min-width: $breakpoint_768) {
         display: none;
@@ -420,6 +419,10 @@
         padding: 0;
         margin: 0;
     }
+
+    .exclusiveSectionComponent {
+        background-image: url('/images/lp_v15/desktop/offers_background.png') !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -430,6 +433,6 @@
     }
 
     .exclusiveSectionComponent {
-        background-image: url('/images/lp_v15/mobile/offers_background.png');
+        background-image: url('/images/lp_v15/mobile/offers_background1.png');
     }
 }
